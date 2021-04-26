@@ -152,6 +152,7 @@
                                 </state>
                                 <connections>
                                     <action selector="dreamButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="naw-RQ-vu2"/>
+                                    <segue destination="dYI-C6-efQ" kind="show" id="PWq-FZ-mOh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQ7-ZZ-fF0">
@@ -167,6 +168,7 @@
                                 </state>
                                 <connections>
                                     <action selector="dreamButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rx4-hr-zT6"/>
+                                    <segue destination="oYd-Mx-kwX" kind="show" id="7ac-rp-e4s"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1K-S3-Y3W">
@@ -182,6 +184,7 @@
                                 </state>
                                 <connections>
                                     <action selector="dreamButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cfn-cA-jEV"/>
+                                    <segue destination="agz-Lk-JT4" kind="show" id="hXq-Wl-tce"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8U-CX-0D5">
@@ -195,7 +198,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="※夢・やりたいこと・なりたい自分がわからない方※" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-hD-rmv">
-                                <rect key="frame" x="30" y="732" width="355" height="18"/>
+                                <rect key="frame" x="23" y="745" width="355" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -253,6 +256,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1002.8985507246377" y="79.6875"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hER-l0-ByH">
+            <objects>
+                <viewController id="oYd-Mx-kwX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WPj-dr-VIB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5Rz-YU-yTl"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="e07-jp-MFw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ozA-Go-zCy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1890" y="366"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ui9-Ou-HIG">
+            <objects>
+                <viewController id="agz-Lk-JT4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CnG-Xi-Atz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="AZg-4O-xdw"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hFz-pm-755"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Obg-ah-QBt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1890" y="1164"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VpN-SH-cEy">
+            <objects>
+                <viewController id="dYI-C6-efQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Olv-71-n5X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="czX-Qh-Z4k"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uOp-FC-Ymo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G3y-Kp-r9U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1890" y="-307"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Rkd-b3-lTS">
@@ -456,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lsc-6G-c3s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1891" y="-1050"/>
+            <point key="canvasLocation" x="1890" y="-983"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rjp-ht-AQe">
