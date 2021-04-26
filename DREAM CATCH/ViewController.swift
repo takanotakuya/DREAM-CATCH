@@ -8,13 +8,30 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var dreamTextField: UITextField!
+    @IBOutlet weak var dreamLabel: UILabel!
+    
+    @IBOutlet weak var whatdoTextField: UITextField!
+    @IBOutlet weak var whatdoLabel: UILabel!
+    
+    @IBOutlet weak var wanttobeTextField: UITextField!
+    @IBOutlet weak var wanttobeLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        dreamTextField.placeholder = "夢を入力"
+        whatdoTextField.placeholder = "やりたいことを入力"
+        wanttobeTextField.placeholder = "なりたい自分を入力"
     }
 
-
+    @IBAction func dreamButton(_ sender: Any) {
+    }
+    @IBAction func whatdoButton(_ sender: Any) {
+    }
+    @IBAction func wanttodoButton(_ sender: Any) {
+    }
+    
 }
 
