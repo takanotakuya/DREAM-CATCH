@@ -15,6 +15,9 @@
 		B0827BA42636593C00F02744 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0827BA22636593C00F02744 /* LaunchScreen.storyboard */; };
 		B0827BAF2636593C00F02744 /* DREAM_CATCHTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0827BAE2636593C00F02744 /* DREAM_CATCHTests.swift */; };
 		B0827BBA2636593C00F02744 /* DREAM_CATCHUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0827BB92636593C00F02744 /* DREAM_CATCHUITests.swift */; };
+		B08575D72637AB0500583DCE /* DreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08575D62637AB0500583DCE /* DreamViewController.swift */; };
+		B08575DC2637AC4E00583DCE /* WhatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08575DB2637AC4E00583DCE /* WhatViewController.swift */; };
+		B08575E12637AC7600583DCE /* WantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08575E02637AC7600583DCE /* WantViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		B0827BB52636593C00F02744 /* DREAM CATCHUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DREAM CATCHUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0827BB92636593C00F02744 /* DREAM_CATCHUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DREAM_CATCHUITests.swift; sourceTree = "<group>"; };
 		B0827BBB2636593C00F02744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B08575D62637AB0500583DCE /* DreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamViewController.swift; sourceTree = "<group>"; };
+		B08575DB2637AC4E00583DCE /* WhatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatViewController.swift; sourceTree = "<group>"; };
+		B08575E02637AC7600583DCE /* WantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				B0827B992636593800F02744 /* SceneDelegate.swift */,
 				B0827B9B2636593800F02744 /* ViewController.swift */,
 				B0827B9D2636593800F02744 /* Main.storyboard */,
+				B08575E02637AC7600583DCE /* WantViewController.swift */,
+				B08575DB2637AC4E00583DCE /* WhatViewController.swift */,
+				B08575D62637AB0500583DCE /* DreamViewController.swift */,
 				B0827BA02636593C00F02744 /* Assets.xcassets */,
 				B0827BA22636593C00F02744 /* LaunchScreen.storyboard */,
 				B0827BA52636593C00F02744 /* Info.plist */,
@@ -258,6 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08575D72637AB0500583DCE /* DreamViewController.swift in Sources */,
+				B08575DC2637AC4E00583DCE /* WhatViewController.swift in Sources */,
+				B08575E12637AC7600583DCE /* WantViewController.swift in Sources */,
 				B0827B9C2636593800F02744 /* ViewController.swift in Sources */,
 				B0827B982636593800F02744 /* AppDelegate.swift in Sources */,
 				B0827B9A2636593800F02744 /* SceneDelegate.swift in Sources */,
