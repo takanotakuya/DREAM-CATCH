@@ -27,13 +27,23 @@ class ViewController: UIViewController {
     }
 
     @IBAction func dreamButton(_ sender: Any) {
-        self.dreamLabel.text = self.dreamTextField.text;
+        let text: String? = dreamTextField.text
+            dreamLabel.text = text
+        
+        dreamTextField.text = ""
     }
     @IBAction func whatdoButton(_ sender: Any) {
-        self.whatdoLabel.text = self.whatdoTextField.text;
+        let text: String? = whatdoTextField.text
+            whatdoLabel.text = text
+        
+        whatdoTextField.text = ""
+        
     }
     @IBAction func wanttodoButton(_ sender: Any) {
-        self.wanttobeLabel.text = self.wanttobeTextField.text;
+        let text: String? = wanttobeTextField.text
+            wanttobeLabel.text = text
+        
+        wanttobeTextField.text = ""
     }
     
     
