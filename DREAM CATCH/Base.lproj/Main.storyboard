@@ -194,17 +194,31 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="※ 夢・やりたいこと・なりたい自分がわからない方は下記をクリック" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-hD-rmv">
-                                <rect key="frame" x="18" y="731" width="379" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 夢・やりたいこと・なりたい自分がわからない方は下記をクリック" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-hD-rmv">
+                                <rect key="frame" x="18" y="742" width="379" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nar-lc-ULY">
+                                <rect key="frame" x="161" y="781" width="93" height="33"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="J4n-R2-9co"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="API通信">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qyc-uT-b8N" kind="show" id="eAL-GE-SKL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="q5B-hD-rmv" firstAttribute="top" secondItem="kIS-2O-xRU" secondAttribute="bottom" constant="32" id="18p-ee-heM"/>
                             <constraint firstItem="6oT-hh-bhU" firstAttribute="top" secondItem="eU2-V7-Ebx" secondAttribute="bottom" constant="20" id="3EV-ie-LZW"/>
                             <constraint firstItem="qha-i3-G51" firstAttribute="top" secondItem="BV6-va-ahW" secondAttribute="bottom" constant="8" symbolic="YES" id="3Wm-QV-93I"/>
                             <constraint firstItem="BV6-va-ahW" firstAttribute="top" secondItem="7i0-gO-eXo" secondAttribute="bottom" constant="20" id="3hr-Ed-Xg7"/>
@@ -212,6 +226,7 @@
                             <constraint firstItem="lTW-iM-Y5x" firstAttribute="top" secondItem="eU2-V7-Ebx" secondAttribute="bottom" constant="56" id="6Cb-Jk-Kcz"/>
                             <constraint firstItem="ksT-9h-Bfm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="ARB-QH-By0"/>
                             <constraint firstItem="1l3-kh-NLT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="Ard-W1-aNg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nar-lc-ULY" secondAttribute="trailing" constant="160" id="Bca-bM-vwK"/>
                             <constraint firstItem="F1K-S3-Y3W" firstAttribute="top" secondItem="eU2-V7-Ebx" secondAttribute="bottom" constant="56" id="BxT-6r-Noo"/>
                             <constraint firstItem="vQ7-ZZ-fF0" firstAttribute="leading" secondItem="h2o-vz-RVU" secondAttribute="trailing" constant="5" id="Dto-mH-Uce"/>
                             <constraint firstItem="vQ7-ZZ-fF0" firstAttribute="top" secondItem="7i0-gO-eXo" secondAttribute="bottom" constant="56" id="EDq-Em-wkh"/>
@@ -219,11 +234,13 @@
                             <constraint firstItem="7i0-gO-eXo" firstAttribute="top" secondItem="6bt-dI-umn" secondAttribute="bottom" constant="20" id="MT0-bR-AOO"/>
                             <constraint firstItem="eU2-V7-Ebx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="O3p-E5-JQj"/>
                             <constraint firstItem="6bt-dI-umn" firstAttribute="top" secondItem="1l3-kh-NLT" secondAttribute="bottom" constant="8" symbolic="YES" id="Ox7-4u-JHw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q5B-hD-rmv" secondAttribute="trailing" constant="17" id="PLP-5C-AVB"/>
                             <constraint firstItem="qha-i3-G51" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PXk-ZA-UrV"/>
                             <constraint firstItem="lTW-iM-Y5x" firstAttribute="leading" secondItem="CED-ac-JZ2" secondAttribute="trailing" constant="20" id="PeH-dk-N3C"/>
                             <constraint firstItem="7i0-gO-eXo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QG0-OX-PFh"/>
                             <constraint firstItem="BV6-va-ahW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="R3q-Qz-Bv8"/>
                             <constraint firstItem="CED-ac-JZ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="T4D-Xm-olE"/>
+                            <constraint firstItem="Nar-lc-ULY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="161" id="VM6-J6-Qf5"/>
                             <constraint firstItem="ybw-Ij-Zau" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="X81-fD-xyW"/>
                             <constraint firstItem="6bt-dI-umn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="b4o-In-8zu"/>
                             <constraint firstItem="h2o-vz-RVU" firstAttribute="top" secondItem="7i0-gO-eXo" secondAttribute="bottom" constant="56" id="ceK-gQ-yd9"/>
@@ -235,8 +252,10 @@
                             <constraint firstItem="F1K-S3-Y3W" firstAttribute="leading" secondItem="lTW-iM-Y5x" secondAttribute="trailing" constant="5" id="jJT-sE-23b"/>
                             <constraint firstItem="vQ7-ZZ-fF0" firstAttribute="leading" secondItem="h2o-vz-RVU" secondAttribute="trailing" constant="5" id="jQm-NE-l1L"/>
                             <constraint firstItem="ksT-9h-Bfm" firstAttribute="leading" secondItem="ybw-Ij-Zau" secondAttribute="trailing" constant="5" id="jgn-EZ-3dC"/>
+                            <constraint firstItem="q5B-hD-rmv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="ptl-In-6bs"/>
                             <constraint firstItem="ybw-Ij-Zau" firstAttribute="leading" secondItem="6bt-dI-umn" secondAttribute="trailing" constant="20" id="u2x-A2-O5x"/>
                             <constraint firstItem="6oT-hh-bhU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vMk-DF-9Rc"/>
+                            <constraint firstItem="Nar-lc-ULY" firstAttribute="top" secondItem="q5B-hD-rmv" secondAttribute="bottom" constant="24" id="xGE-Vp-BDU"/>
                             <constraint firstItem="h2o-vz-RVU" firstAttribute="leading" secondItem="qha-i3-G51" secondAttribute="trailing" constant="20" id="yaX-SP-HCv"/>
                         </constraints>
                     </view>
@@ -305,6 +324,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozA-Go-zCy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1890" y="366"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="m4N-xQ-FTY">
+            <objects>
+                <viewController id="qyc-uT-b8N" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qKi-SL-9B8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Oig-dC-3yk"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="J38-pi-6eA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AYa-wH-a7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003" y="1164"/>
         </scene>
         <!--Want to Be List-->
         <scene sceneID="Ui9-Ou-HIG">
