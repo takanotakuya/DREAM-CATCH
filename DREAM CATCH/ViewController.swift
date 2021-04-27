@@ -25,10 +25,6 @@ class ViewController: UIViewController {
         whatdoTextField.placeholder = "やりたいことを入力"
         wanttobeTextField.placeholder = "なりたい自分を入力"
     }
-
-    
-    
-    
     
     @IBAction func dreamButton(_ sender: Any) {
         let text: String? = dreamTextField.text
@@ -50,6 +46,5 @@ class ViewController: UIViewController {
         
         wanttobeTextField.text = ""
     }
-    
 }
 
