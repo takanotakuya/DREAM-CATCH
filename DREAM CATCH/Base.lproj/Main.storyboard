@@ -70,7 +70,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="whatdoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddm-Yl-8tK"/>
+                                    <action selector="whatdoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MU1-pm-En0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTW-iM-Y5x">
@@ -85,7 +85,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="wanttodoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GFZ-kC-rtA"/>
+                                    <action selector="wanttodoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YbA-1d-cRA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたの夢はなんですか？" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i0-gO-eXo">
@@ -130,7 +130,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="dreamButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UhF-RW-GTL"/>
+                                    <action selector="dreamButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kpm-uX-urs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksT-9h-Bfm">
@@ -145,8 +145,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="dreamButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="naw-RQ-vu2"/>
-                                    <segue destination="dYI-C6-efQ" kind="show" id="PWq-FZ-mOh"/>
+                                    <segue destination="dYI-C6-efQ" kind="show" id="XbO-R5-PKB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQ7-ZZ-fF0">
@@ -161,8 +160,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="dreamButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rx4-hr-zT6"/>
-                                    <segue destination="oYd-Mx-kwX" kind="show" id="7ac-rp-e4s"/>
+                                    <segue destination="oYd-Mx-kwX" kind="show" id="Q3q-YB-a6j"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1K-S3-Y3W">
@@ -177,8 +175,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="dreamButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cfn-cA-jEV"/>
-                                    <segue destination="agz-Lk-JT4" kind="show" id="hXq-Wl-tce"/>
+                                    <segue destination="agz-Lk-JT4" kind="show" id="sLU-Fp-YZL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8U-CX-0D5">
@@ -191,16 +188,16 @@
                                     <segue destination="Wge-01-svN" kind="show" id="I0j-No-BUg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="※夢・やりたいこと・なりたい自分がわからない方※" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-hD-rmv">
-                                <rect key="frame" x="23" y="745" width="355" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dream" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1l3-kh-NLT">
                                 <rect key="frame" x="23" y="108" width="74.5" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="※ 夢・やりたいこと・なりたい自分がわからない方は下記をクリック" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-hD-rmv">
+                                <rect key="frame" x="18" y="731" width="379" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -245,12 +242,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="DREAM CATCH" id="Zkh-Tb-tQn"/>
                     <connections>
-                        <outlet property="dreamLabel" destination="7i0-gO-eXo" id="35V-cV-a8L"/>
-                        <outlet property="dreamTextField" destination="6bt-dI-umn" id="BcC-no-7GU"/>
-                        <outlet property="wanttobeLabel" destination="kIS-2O-xRU" id="quY-1R-yB6"/>
-                        <outlet property="wanttobeTextField" destination="CED-ac-JZ2" id="hWy-3k-oMx"/>
-                        <outlet property="whatdoLabel" destination="eU2-V7-Ebx" id="waV-aH-EqS"/>
-                        <outlet property="whatdoTextField" destination="qha-i3-G51" id="odH-MA-wTW"/>
+                        <outlet property="dreamLabel" destination="7i0-gO-eXo" id="jbO-wg-c4N"/>
+                        <outlet property="dreamTextField" destination="6bt-dI-umn" id="7TU-4o-lbM"/>
+                        <outlet property="wanttobeLabel" destination="kIS-2O-xRU" id="XJf-yY-9db"/>
+                        <outlet property="wanttobeTextField" destination="CED-ac-JZ2" id="7h4-MB-RnI"/>
+                        <outlet property="whatdoLabel" destination="eU2-V7-Ebx" id="iH3-ku-YfC"/>
+                        <outlet property="whatdoTextField" destination="qha-i3-G51" id="jOn-gN-aKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -373,7 +370,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dreamCell" id="i4m-v0-0Wn">
+                                    <tableViewCell clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dreamCell" id="i4m-v0-0Wn">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i4m-v0-0Wn" id="go6-5Z-mmK">

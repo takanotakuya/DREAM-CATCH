@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBOutlet weak var dreamTextField: UITextField!
     @IBOutlet weak var dreamLabel: UILabel!
     
@@ -16,7 +17,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var wanttobeTextField: UITextField!
     @IBOutlet weak var wanttobeLabel: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,24 +32,24 @@ class ViewController: UIViewController {
     
     @IBAction func dreamButton(_ sender: Any) {
         let text: String? = dreamTextField.text
-            dreamLabel.text = text
+        dreamLabel.text = text
         
         dreamTextField.text = ""
     }
+    
     @IBAction func whatdoButton(_ sender: Any) {
         let text: String? = whatdoTextField.text
-            whatdoLabel.text = text
+        whatdoLabel.text = text
         
         whatdoTextField.text = ""
-        
     }
+    
     @IBAction func wanttodoButton(_ sender: Any) {
         let text: String? = wanttobeTextField.text
-            wanttobeLabel.text = text
+        wanttobeLabel.text = text
         
         wanttobeTextField.text = ""
     }
-    
     
 }
 
