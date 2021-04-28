@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,7 @@
 		B0AA193626391D0E0064E637 /* YoutubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA193526391D0E0064E637 /* YoutubeViewController.swift */; };
 		B0AA193C263928290064E637 /* VideoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA193B263928290064E637 /* VideoListCell.swift */; };
 		B0AA194526392A000064E637 /* VideoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0AA194426392A000064E637 /* VideoListCell.xib */; };
+		B0AA195526393BC70064E637 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA195426393BC70064E637 /* Video.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		B0AA193526391D0E0064E637 /* YoutubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeViewController.swift; sourceTree = "<group>"; };
 		B0AA193B263928290064E637 /* VideoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListCell.swift; sourceTree = "<group>"; };
 		B0AA194426392A000064E637 /* VideoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoListCell.xib; sourceTree = "<group>"; };
+		B0AA195426393BC70064E637 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		E1D3311B45509379D8378199 /* Pods-DREAM CATCHTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DREAM CATCHTests.release.xcconfig"; path = "Target Support Files/Pods-DREAM CATCHTests/Pods-DREAM CATCHTests.release.xcconfig"; sourceTree = "<group>"; };
 		F50853301C02A5B639E3CBA8 /* Pods_DREAM_CATCH_DREAM_CATCHUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DREAM_CATCH_DREAM_CATCHUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 		B0827B962636593800F02744 /* DREAM CATCH */ = {
 			isa = PBXGroup;
 			children = (
+				B0AA195326393B8F0064E637 /* Models */,
 				B0AA1943263929A60064E637 /* xibs */,
 				B0AA193A263927CA0064E637 /* Cells */,
 				B0827B972636593800F02744 /* AppDelegate.swift */,
@@ -189,6 +192,14 @@
 			path = xibs;
 			sourceTree = "<group>";
 		};
+		B0AA195326393B8F0064E637 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B0AA195426393BC70064E637 /* Video.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C2F476E7D5D1FC7C4CC9B88D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,7 +210,6 @@
 				17297EB6B4EE0ECACD811943 /* Pods-DREAM CATCHTests.debug.xcconfig */,
 				E1D3311B45509379D8378199 /* Pods-DREAM CATCHTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -446,6 +456,7 @@
 				B0AA193C263928290064E637 /* VideoListCell.swift in Sources */,
 				B0AA193626391D0E0064E637 /* YoutubeViewController.swift in Sources */,
 				B08575DC2637AC4E00583DCE /* WhatViewController.swift in Sources */,
+				B0AA195526393BC70064E637 /* Video.swift in Sources */,
 				B08575E12637AC7600583DCE /* WantViewController.swift in Sources */,
 				B0827B9C2636593800F02744 /* ViewController.swift in Sources */,
 				B0827B982636593800F02744 /* AppDelegate.swift in Sources */,

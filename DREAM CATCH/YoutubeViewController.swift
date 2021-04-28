@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class YoutubeViewController: UIViewController {
     
@@ -20,6 +21,14 @@ class YoutubeViewController: UIViewController {
         videoListCollectionView.dataSource = self
         
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
+        
+        let urlString = "https://www.googleapis.com/youtube/v3/search?q=lebronjames&key=AIzaSyBMchvJKgYkEVGgw2BdAcT9q_-y6pu9QHA&part=snippet"
+        
+        let request = AF.request(urlString)
+        
+        request.responseJSON { (response) in
+            print("respomse: ", response)
+        }
     }
 }
 
