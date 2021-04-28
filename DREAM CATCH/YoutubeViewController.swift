@@ -20,7 +20,7 @@ class YoutubeViewController: UIViewController {
         videoListCollectionView.delegate = self
         videoListCollectionView.dataSource = self
         
-        videoListCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        videoListCollectionView.register(VideoListCell.self, forCellWithReuseIdentifier: cellId)
         
     }
 }
@@ -38,10 +38,8 @@ extension YoutubeViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .green
+        let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! VideoListCell
+//        cell.backgroundColor = .green
         return cell
     }
-    
-    
 }

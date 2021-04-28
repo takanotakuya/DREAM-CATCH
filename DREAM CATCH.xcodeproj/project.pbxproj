@@ -19,6 +19,7 @@
 		B08575DC2637AC4E00583DCE /* WhatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08575DB2637AC4E00583DCE /* WhatViewController.swift */; };
 		B08575E12637AC7600583DCE /* WantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08575E02637AC7600583DCE /* WantViewController.swift */; };
 		B0AA193626391D0E0064E637 /* YoutubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA193526391D0E0064E637 /* YoutubeViewController.swift */; };
+		B0AA193C263928290064E637 /* VideoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA193B263928290064E637 /* VideoListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B08575DB2637AC4E00583DCE /* WhatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatViewController.swift; sourceTree = "<group>"; };
 		B08575E02637AC7600583DCE /* WantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewController.swift; sourceTree = "<group>"; };
 		B0AA193526391D0E0064E637 /* YoutubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeViewController.swift; sourceTree = "<group>"; };
+		B0AA193B263928290064E637 /* VideoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		B0827B962636593800F02744 /* DREAM CATCH */ = {
 			isa = PBXGroup;
 			children = (
+				B0AA193A263927CA0064E637 /* Cells */,
 				B0827B972636593800F02744 /* AppDelegate.swift */,
 				B0827B992636593800F02744 /* SceneDelegate.swift */,
 				B0827B9B2636593800F02744 /* ViewController.swift */,
@@ -138,6 +141,14 @@
 				B0827BBB2636593C00F02744 /* Info.plist */,
 			);
 			path = "DREAM CATCHUITests";
+			sourceTree = "<group>";
+		};
+		B0AA193A263927CA0064E637 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B0AA193B263928290064E637 /* VideoListCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B08575D72637AB0500583DCE /* DreamViewController.swift in Sources */,
+				B0AA193C263928290064E637 /* VideoListCell.swift in Sources */,
 				B0AA193626391D0E0064E637 /* YoutubeViewController.swift in Sources */,
 				B08575DC2637AC4E00583DCE /* WhatViewController.swift in Sources */,
 				B08575E12637AC7600583DCE /* WantViewController.swift in Sources */,
