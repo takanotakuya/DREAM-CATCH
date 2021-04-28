@@ -9,14 +9,12 @@ import UIKit
 
 class VideoListCell: UICollectionViewCell {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    @IBOutlet weak var channelImageView: UIImageView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
-        backgroundColor = .black
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        
+        channelImageView.layer.cornerRadius = 40 / 2
     }
     
 }
