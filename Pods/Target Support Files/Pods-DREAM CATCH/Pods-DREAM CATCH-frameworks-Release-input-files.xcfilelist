@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-DREAM CATCH/Pods-DREAM CATCH-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework

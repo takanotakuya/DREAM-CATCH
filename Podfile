@@ -7,6 +7,7 @@ target 'DREAM CATCH' do
 
   # Pods for DREAM CATCH
   pod 'Alamofire', '~> 5.2'
+  pod 'Nuke'
 
   target 'DREAM CATCHTests' do
     inherit! :search_paths
