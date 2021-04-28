@@ -20,6 +20,7 @@
 		B08575E12637AC7600583DCE /* WantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08575E02637AC7600583DCE /* WantViewController.swift */; };
 		B0AA193626391D0E0064E637 /* YoutubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA193526391D0E0064E637 /* YoutubeViewController.swift */; };
 		B0AA193C263928290064E637 /* VideoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA193B263928290064E637 /* VideoListCell.swift */; };
+		B0AA194526392A000064E637 /* VideoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0AA194426392A000064E637 /* VideoListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		B08575E02637AC7600583DCE /* WantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewController.swift; sourceTree = "<group>"; };
 		B0AA193526391D0E0064E637 /* YoutubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeViewController.swift; sourceTree = "<group>"; };
 		B0AA193B263928290064E637 /* VideoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListCell.swift; sourceTree = "<group>"; };
+		B0AA194426392A000064E637 /* VideoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		B0827B962636593800F02744 /* DREAM CATCH */ = {
 			isa = PBXGroup;
 			children = (
+				B0AA1943263929A60064E637 /* xibs */,
 				B0AA193A263927CA0064E637 /* Cells */,
 				B0827B972636593800F02744 /* AppDelegate.swift */,
 				B0827B992636593800F02744 /* SceneDelegate.swift */,
@@ -149,6 +152,14 @@
 				B0AA193B263928290064E637 /* VideoListCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		B0AA1943263929A60064E637 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				B0AA194426392A000064E637 /* VideoListCell.xib */,
+			);
+			path = xibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0827BA42636593C00F02744 /* LaunchScreen.storyboard in Resources */,
+				B0AA194526392A000064E637 /* VideoListCell.xib in Resources */,
 				B0827BA12636593C00F02744 /* Assets.xcassets in Resources */,
 				B0827B9F2636593800F02744 /* Main.storyboard in Resources */,
 			);
