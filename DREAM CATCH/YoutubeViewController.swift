@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 
 class YoutubeViewController: UIViewController {
+    @IBOutlet weak var profileimageView: UIImageView!
     
     @IBOutlet weak var videoListCollectionView: UICollectionView!
     
@@ -22,6 +23,8 @@ class YoutubeViewController: UIViewController {
         videoListCollectionView.dataSource = self
         
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
+        
+        profileimageView.layer.cornerRadius = 20
         
         fetchYoutubeSerachInfo()
     }

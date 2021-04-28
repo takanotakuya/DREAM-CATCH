@@ -335,8 +335,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BFx-fH-223">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="188" width="414" height="674"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EdR-Ic-twN">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -354,24 +354,93 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKm-8g-6gm">
+                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youtube" translatesAutoresizingMaskIntoConstraints="NO" id="14M-0X-Ttt">
+                                        <rect key="frame" x="10" y="5" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="O0R-Tr-Jph"/>
+                                            <constraint firstAttribute="width" constant="50" id="ifo-Wn-f0k"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YouTube" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gn-wG-6ya">
+                                        <rect key="frame" x="63" y="18" width="81" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BCLife" translatesAutoresizingMaskIntoConstraints="NO" id="YZ3-th-m1E">
+                                        <rect key="frame" x="364" y="10" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="YZ3-th-m1E" secondAttribute="height" multiplier="1:1" id="85G-O3-ByG"/>
+                                            <constraint firstAttribute="width" constant="40" id="ese-LW-cka"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GX-R1-YpH">
+                                        <rect key="frame" x="336" y="17.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="aCu-wX-XOB"/>
+                                            <constraint firstAttribute="width" secondItem="0GX-R1-YpH" secondAttribute="height" multiplier="1:1" id="siw-Z6-F17"/>
+                                        </constraints>
+                                        <state key="normal" image="search"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pm-Lg-TFS">
+                                        <rect key="frame" x="301" y="17.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="0Pm-Lg-TFS" secondAttribute="height" multiplier="1:1" id="5ki-id-bMl"/>
+                                            <constraint firstAttribute="width" constant="25" id="ocu-hJ-Ah1"/>
+                                        </constraints>
+                                        <state key="normal" image="movie"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0gn-wG-6ya" firstAttribute="leading" secondItem="14M-0X-Ttt" secondAttribute="trailing" constant="3" id="FuN-ze-fCR"/>
+                                    <constraint firstItem="0GX-R1-YpH" firstAttribute="leading" secondItem="0Pm-Lg-TFS" secondAttribute="trailing" constant="10" id="IgZ-DY-8NX"/>
+                                    <constraint firstItem="YZ3-th-m1E" firstAttribute="centerY" secondItem="AKm-8g-6gm" secondAttribute="centerY" id="P2V-Mq-PkJ"/>
+                                    <constraint firstItem="0gn-wG-6ya" firstAttribute="centerY" secondItem="AKm-8g-6gm" secondAttribute="centerY" id="YKi-VV-TLH"/>
+                                    <constraint firstItem="14M-0X-Ttt" firstAttribute="centerY" secondItem="AKm-8g-6gm" secondAttribute="centerY" id="ae3-MC-vEj"/>
+                                    <constraint firstItem="14M-0X-Ttt" firstAttribute="leading" secondItem="AKm-8g-6gm" secondAttribute="leading" constant="10" id="cxZ-6Q-kzd"/>
+                                    <constraint firstAttribute="height" constant="60" id="d0U-yr-a9p"/>
+                                    <constraint firstItem="YZ3-th-m1E" firstAttribute="leading" secondItem="0GX-R1-YpH" secondAttribute="trailing" constant="3" id="dxg-Gi-e5w"/>
+                                    <constraint firstItem="0GX-R1-YpH" firstAttribute="centerY" secondItem="AKm-8g-6gm" secondAttribute="centerY" id="gPk-wl-VC5"/>
+                                    <constraint firstItem="0Pm-Lg-TFS" firstAttribute="centerY" secondItem="AKm-8g-6gm" secondAttribute="centerY" id="qCK-aH-jNW"/>
+                                    <constraint firstAttribute="trailing" secondItem="YZ3-th-m1E" secondAttribute="trailing" constant="10" id="ryS-VN-U23"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="キーワードは「夢を見つける方法・やりたいことリスト」で検索！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krW-7G-xZ8">
+                                <rect key="frame" x="20" y="156" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oig-dC-3yk"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="BFx-fH-223" firstAttribute="top" secondItem="Oig-dC-3yk" secondAttribute="top" id="EXA-cf-6yw"/>
+                            <constraint firstItem="krW-7G-xZ8" firstAttribute="top" secondItem="AKm-8g-6gm" secondAttribute="bottom" constant="8" symbolic="YES" id="2De-Iw-btQ"/>
+                            <constraint firstItem="BFx-fH-223" firstAttribute="top" secondItem="krW-7G-xZ8" secondAttribute="bottom" constant="8" symbolic="YES" id="9C6-Hg-hbg"/>
+                            <constraint firstItem="BFx-fH-223" firstAttribute="top" secondItem="AKm-8g-6gm" secondAttribute="bottom" constant="40" id="EXA-cf-6yw"/>
                             <constraint firstItem="Oig-dC-3yk" firstAttribute="bottom" secondItem="BFx-fH-223" secondAttribute="bottom" id="LIT-7J-v48"/>
+                            <constraint firstItem="krW-7G-xZ8" firstAttribute="leading" secondItem="Oig-dC-3yk" secondAttribute="leading" constant="20" id="NYF-85-SZB"/>
                             <constraint firstItem="BFx-fH-223" firstAttribute="leading" secondItem="Oig-dC-3yk" secondAttribute="leading" id="QvK-c4-pGx"/>
                             <constraint firstItem="Oig-dC-3yk" firstAttribute="trailing" secondItem="BFx-fH-223" secondAttribute="trailing" id="eRq-0L-Gj0"/>
+                            <constraint firstItem="AKm-8g-6gm" firstAttribute="top" secondItem="Oig-dC-3yk" secondAttribute="top" id="fve-kt-p32"/>
+                            <constraint firstItem="AKm-8g-6gm" firstAttribute="trailing" secondItem="Oig-dC-3yk" secondAttribute="trailing" id="kSF-89-UKD"/>
+                            <constraint firstItem="Oig-dC-3yk" firstAttribute="trailing" secondItem="krW-7G-xZ8" secondAttribute="trailing" constant="20" id="s7d-WB-maw"/>
+                            <constraint firstItem="AKm-8g-6gm" firstAttribute="leading" secondItem="Oig-dC-3yk" secondAttribute="leading" id="saM-cw-pag"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="J38-pi-6eA"/>
                     <connections>
+                        <outlet property="profileimageView" destination="YZ3-th-m1E" id="Il9-4m-VID"/>
                         <outlet property="videoListCollectionView" destination="BFx-fH-223" id="pOM-6C-cXI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AYa-wH-a7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003" y="872"/>
+            <point key="canvasLocation" x="1002.8985507246377" y="871.875"/>
         </scene>
         <!--Want to Be List-->
         <scene sceneID="Ui9-Ou-HIG">
@@ -706,12 +775,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BCLife" width="500" height="500"/>
         <image name="DREAM CATCH" width="500" height="500"/>
+        <image name="movie" width="500" height="500"/>
+        <image name="search" width="500" height="500"/>
+        <image name="youtube" width="500" height="500"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
