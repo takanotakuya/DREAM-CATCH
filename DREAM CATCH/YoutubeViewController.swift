@@ -27,7 +27,14 @@ class YoutubeViewController: UIViewController {
         let request = AF.request(urlString)
         
         request.responseJSON { (response) in
-            print("respomse: ", response)
+            do {
+                guard let data = response.data else { return }
+                let decode = JSONDecoder()
+                let video = try decode.decode(Video.self, from: data)
+                print("video: ", video.items.count)
+            } catch {
+                print("変換に失敗しました。: ", error)
+            }
         }
     }
 }
@@ -35,10 +42,10 @@ class YoutubeViewController: UIViewController {
 extension YoutubeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let width = self.view.frame.width
-            
-            return .init(width: width, height: width)
-        }
+        let width = self.view.frame.width
+        
+        return .init(width: width, height: width)
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
