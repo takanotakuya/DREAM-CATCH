@@ -27,7 +27,6 @@
 		B0AA195526393BC70064E637 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA195426393BC70064E637 /* Video.swift */; };
 		B0AA196526394B240064E637 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA196426394B240064E637 /* Channel.swift */; };
 		B0AA196B2639723E0064E637 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA196A2639723E0064E637 /* API.swift */; };
-		B0AA1989263995DD0064E637 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AA1988263995DD0064E637 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +77,6 @@
 		B0AA195426393BC70064E637 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		B0AA196426394B240064E637 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		B0AA196A2639723E0064E637 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		B0AA1988263995DD0064E637 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		E1D3311B45509379D8378199 /* Pods-DREAM CATCHTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DREAM CATCHTests.release.xcconfig"; path = "Target Support Files/Pods-DREAM CATCHTests/Pods-DREAM CATCHTests.release.xcconfig"; sourceTree = "<group>"; };
 		F50853301C02A5B639E3CBA8 /* Pods_DREAM_CATCH_DREAM_CATCHUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DREAM_CATCH_DREAM_CATCHUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,16 +148,11 @@
 				B0AA195326393B8F0064E637 /* Models */,
 				B0AA1943263929A60064E637 /* xibs */,
 				B0AA193A263927CA0064E637 /* Cells */,
+				B0AA1998263A40C30064E637 /* ViewControllers */,
 				B0827B972636593800F02744 /* AppDelegate.swift */,
 				B0827B992636593800F02744 /* SceneDelegate.swift */,
 				B0827BA22636593C00F02744 /* LaunchScreen.storyboard */,
 				B0827B9D2636593800F02744 /* Main.storyboard */,
-				B0AA1988263995DD0064E637 /* Storyboard.storyboard */,
-				B0827B9B2636593800F02744 /* ViewController.swift */,
-				B0AA193526391D0E0064E637 /* YoutubeViewController.swift */,
-				B08575E02637AC7600583DCE /* WantViewController.swift */,
-				B08575DB2637AC4E00583DCE /* WhatViewController.swift */,
-				B08575D62637AB0500583DCE /* DreamViewController.swift */,
 				B0827BA02636593C00F02744 /* Assets.xcassets */,
 				B0827BA52636593C00F02744 /* Info.plist */,
 			);
@@ -215,6 +208,18 @@
 				B0AA196A2639723E0064E637 /* API.swift */,
 			);
 			path = Servise;
+			sourceTree = "<group>";
+		};
+		B0AA1998263A40C30064E637 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0827B9B2636593800F02744 /* ViewController.swift */,
+				B0AA193526391D0E0064E637 /* YoutubeViewController.swift */,
+				B08575E02637AC7600583DCE /* WantViewController.swift */,
+				B08575DB2637AC4E00583DCE /* WhatViewController.swift */,
+				B08575D62637AB0500583DCE /* DreamViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		C2F476E7D5D1FC7C4CC9B88D /* Pods */ = {
@@ -342,7 +347,6 @@
 				B0AA194526392A000064E637 /* VideoListCell.xib in Resources */,
 				B0827BA12636593C00F02744 /* Assets.xcassets in Resources */,
 				B0827B9F2636593800F02744 /* Main.storyboard in Resources */,
-				B0AA1989263995DD0064E637 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
