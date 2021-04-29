@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0748D931F9ABAEFBDC950A52 /* Pods_DREAM_CATCHTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A57154D5498B7EAA9400C9E /* Pods_DREAM_CATCHTests.framework */; };
+		79F8347913F4EC8546D47F88 /* Pods_DREAM_CATCH_DREAM_CATCHUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50853301C02A5B639E3CBA8 /* Pods_DREAM_CATCH_DREAM_CATCHUITests.framework */; };
+		9DACA23F9974A54EB2FB013D /* Pods_DREAM_CATCH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B45FA2A2C2BE720C276EB2 /* Pods_DREAM_CATCH.framework */; };
 		B0827B982636593800F02744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0827B972636593800F02744 /* AppDelegate.swift */; };
 		B0827B9A2636593800F02744 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0827B992636593800F02744 /* SceneDelegate.swift */; };
 		B0827B9C2636593800F02744 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0827B9B2636593800F02744 /* ViewController.swift */; };
@@ -18,6 +21,13 @@
 		B08575D72637AB0500583DCE /* DreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08575D62637AB0500583DCE /* DreamViewController.swift */; };
 		B08575DC2637AC4E00583DCE /* WhatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08575DB2637AC4E00583DCE /* WhatViewController.swift */; };
 		B08575E12637AC7600583DCE /* WantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08575E02637AC7600583DCE /* WantViewController.swift */; };
+		B0AA193626391D0E0064E637 /* YoutubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA193526391D0E0064E637 /* YoutubeViewController.swift */; };
+		B0AA193C263928290064E637 /* VideoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA193B263928290064E637 /* VideoListCell.swift */; };
+		B0AA194526392A000064E637 /* VideoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0AA194426392A000064E637 /* VideoListCell.xib */; };
+		B0AA195526393BC70064E637 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA195426393BC70064E637 /* Video.swift */; };
+		B0AA196526394B240064E637 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA196426394B240064E637 /* Channel.swift */; };
+		B0AA196B2639723E0064E637 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA196A2639723E0064E637 /* API.swift */; };
+		B0AA1989263995DD0064E637 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AA1988263995DD0064E637 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03B45FA2A2C2BE720C276EB2 /* Pods_DREAM_CATCH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DREAM_CATCH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17297EB6B4EE0ECACD811943 /* Pods-DREAM CATCHTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DREAM CATCHTests.debug.xcconfig"; path = "Target Support Files/Pods-DREAM CATCHTests/Pods-DREAM CATCHTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4054FF994EC3E54AA204D79B /* Pods-DREAM CATCH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DREAM CATCH.release.xcconfig"; path = "Target Support Files/Pods-DREAM CATCH/Pods-DREAM CATCH.release.xcconfig"; sourceTree = "<group>"; };
+		4BF725FA12BF5D5364370114 /* Pods-DREAM CATCH-DREAM CATCHUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DREAM CATCH-DREAM CATCHUITests.debug.xcconfig"; path = "Target Support Files/Pods-DREAM CATCH-DREAM CATCHUITests/Pods-DREAM CATCH-DREAM CATCHUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F4F3BCAEF6307609512AC1F /* Pods-DREAM CATCH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DREAM CATCH.debug.xcconfig"; path = "Target Support Files/Pods-DREAM CATCH/Pods-DREAM CATCH.debug.xcconfig"; sourceTree = "<group>"; };
+		8FF650E054E610819F5D5444 /* Pods-DREAM CATCH-DREAM CATCHUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DREAM CATCH-DREAM CATCHUITests.release.xcconfig"; path = "Target Support Files/Pods-DREAM CATCH-DREAM CATCHUITests/Pods-DREAM CATCH-DREAM CATCHUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9A57154D5498B7EAA9400C9E /* Pods_DREAM_CATCHTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DREAM_CATCHTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0827B942636593800F02744 /* DREAM CATCH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DREAM CATCH.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0827B972636593800F02744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0827B992636593800F02744 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +72,15 @@
 		B08575D62637AB0500583DCE /* DreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamViewController.swift; sourceTree = "<group>"; };
 		B08575DB2637AC4E00583DCE /* WhatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatViewController.swift; sourceTree = "<group>"; };
 		B08575E02637AC7600583DCE /* WantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewController.swift; sourceTree = "<group>"; };
+		B0AA193526391D0E0064E637 /* YoutubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeViewController.swift; sourceTree = "<group>"; };
+		B0AA193B263928290064E637 /* VideoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListCell.swift; sourceTree = "<group>"; };
+		B0AA194426392A000064E637 /* VideoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoListCell.xib; sourceTree = "<group>"; };
+		B0AA195426393BC70064E637 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		B0AA196426394B240064E637 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		B0AA196A2639723E0064E637 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B0AA1988263995DD0064E637 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		E1D3311B45509379D8378199 /* Pods-DREAM CATCHTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DREAM CATCHTests.release.xcconfig"; path = "Target Support Files/Pods-DREAM CATCHTests/Pods-DREAM CATCHTests.release.xcconfig"; sourceTree = "<group>"; };
+		F50853301C02A5B639E3CBA8 /* Pods_DREAM_CATCH_DREAM_CATCHUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DREAM_CATCH_DREAM_CATCHUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DACA23F9974A54EB2FB013D /* Pods_DREAM_CATCH.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0748D931F9ABAEFBDC950A52 /* Pods_DREAM_CATCHTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +104,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F8347913F4EC8546D47F88 /* Pods_DREAM_CATCH_DREAM_CATCHUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CAAF4C2C26AE48FE27F7098 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03B45FA2A2C2BE720C276EB2 /* Pods_DREAM_CATCH.framework */,
+				F50853301C02A5B639E3CBA8 /* Pods_DREAM_CATCH_DREAM_CATCHUITests.framework */,
+				9A57154D5498B7EAA9400C9E /* Pods_DREAM_CATCHTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0827B8B2636593800F02744 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +128,8 @@
 				B0827BAD2636593C00F02744 /* DREAM CATCHTests */,
 				B0827BB82636593C00F02744 /* DREAM CATCHUITests */,
 				B0827B952636593800F02744 /* Products */,
+				C2F476E7D5D1FC7C4CC9B88D /* Pods */,
+				3CAAF4C2C26AE48FE27F7098 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,15 +146,21 @@
 		B0827B962636593800F02744 /* DREAM CATCH */ = {
 			isa = PBXGroup;
 			children = (
+				B0AA1969263971A20064E637 /* Servise */,
+				B0AA195326393B8F0064E637 /* Models */,
+				B0AA1943263929A60064E637 /* xibs */,
+				B0AA193A263927CA0064E637 /* Cells */,
 				B0827B972636593800F02744 /* AppDelegate.swift */,
 				B0827B992636593800F02744 /* SceneDelegate.swift */,
-				B0827B9B2636593800F02744 /* ViewController.swift */,
+				B0827BA22636593C00F02744 /* LaunchScreen.storyboard */,
 				B0827B9D2636593800F02744 /* Main.storyboard */,
+				B0AA1988263995DD0064E637 /* Storyboard.storyboard */,
+				B0827B9B2636593800F02744 /* ViewController.swift */,
+				B0AA193526391D0E0064E637 /* YoutubeViewController.swift */,
 				B08575E02637AC7600583DCE /* WantViewController.swift */,
 				B08575DB2637AC4E00583DCE /* WhatViewController.swift */,
 				B08575D62637AB0500583DCE /* DreamViewController.swift */,
 				B0827BA02636593C00F02744 /* Assets.xcassets */,
-				B0827BA22636593C00F02744 /* LaunchScreen.storyboard */,
 				B0827BA52636593C00F02744 /* Info.plist */,
 			);
 			path = "DREAM CATCH";
@@ -137,6 +184,52 @@
 			path = "DREAM CATCHUITests";
 			sourceTree = "<group>";
 		};
+		B0AA193A263927CA0064E637 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B0AA193B263928290064E637 /* VideoListCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B0AA1943263929A60064E637 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				B0AA194426392A000064E637 /* VideoListCell.xib */,
+			);
+			path = xibs;
+			sourceTree = "<group>";
+		};
+		B0AA195326393B8F0064E637 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B0AA195426393BC70064E637 /* Video.swift */,
+				B0AA196426394B240064E637 /* Channel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B0AA1969263971A20064E637 /* Servise */ = {
+			isa = PBXGroup;
+			children = (
+				B0AA196A2639723E0064E637 /* API.swift */,
+			);
+			path = Servise;
+			sourceTree = "<group>";
+		};
+		C2F476E7D5D1FC7C4CC9B88D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F4F3BCAEF6307609512AC1F /* Pods-DREAM CATCH.debug.xcconfig */,
+				4054FF994EC3E54AA204D79B /* Pods-DREAM CATCH.release.xcconfig */,
+				4BF725FA12BF5D5364370114 /* Pods-DREAM CATCH-DREAM CATCHUITests.debug.xcconfig */,
+				8FF650E054E610819F5D5444 /* Pods-DREAM CATCH-DREAM CATCHUITests.release.xcconfig */,
+				17297EB6B4EE0ECACD811943 /* Pods-DREAM CATCHTests.debug.xcconfig */,
+				E1D3311B45509379D8378199 /* Pods-DREAM CATCHTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0827BBE2636593C00F02744 /* Build configuration list for PBXNativeTarget "DREAM CATCH" */;
 			buildPhases = (
+				95FE07185CF429A1B4DEF077 /* [CP] Check Pods Manifest.lock */,
 				B0827B902636593800F02744 /* Sources */,
 				B0827B912636593800F02744 /* Frameworks */,
 				B0827B922636593800F02744 /* Resources */,
+				41649430FEA7FB5291D4A618 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0827BC12636593C00F02744 /* Build configuration list for PBXNativeTarget "DREAM CATCHTests" */;
 			buildPhases = (
+				B8EE68D123876468C0372FF6 /* [CP] Check Pods Manifest.lock */,
 				B0827BA62636593C00F02744 /* Sources */,
 				B0827BA72636593C00F02744 /* Frameworks */,
 				B0827BA82636593C00F02744 /* Resources */,
@@ -179,9 +275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0827BC42636593C00F02744 /* Build configuration list for PBXNativeTarget "DREAM CATCHUITests" */;
 			buildPhases = (
+				14509CD0EF6D0322FF311BA9 /* [CP] Check Pods Manifest.lock */,
 				B0827BB12636593C00F02744 /* Sources */,
 				B0827BB22636593C00F02744 /* Frameworks */,
 				B0827BB32636593C00F02744 /* Resources */,
+				7941116E0BAA5EFDBF4348CC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,8 +339,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0827BA42636593C00F02744 /* LaunchScreen.storyboard in Resources */,
+				B0AA194526392A000064E637 /* VideoListCell.xib in Resources */,
 				B0827BA12636593C00F02744 /* Assets.xcassets in Resources */,
 				B0827B9F2636593800F02744 /* Main.storyboard in Resources */,
+				B0AA1989263995DD0064E637 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,14 +362,122 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14509CD0EF6D0322FF311BA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DREAM CATCH-DREAM CATCHUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41649430FEA7FB5291D4A618 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DREAM CATCH/Pods-DREAM CATCH-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DREAM CATCH/Pods-DREAM CATCH-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DREAM CATCH/Pods-DREAM CATCH-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7941116E0BAA5EFDBF4348CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DREAM CATCH-DREAM CATCHUITests/Pods-DREAM CATCH-DREAM CATCHUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DREAM CATCH-DREAM CATCHUITests/Pods-DREAM CATCH-DREAM CATCHUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DREAM CATCH-DREAM CATCHUITests/Pods-DREAM CATCH-DREAM CATCHUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95FE07185CF429A1B4DEF077 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DREAM CATCH-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8EE68D123876468C0372FF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DREAM CATCHTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B0827B902636593800F02744 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B08575D72637AB0500583DCE /* DreamViewController.swift in Sources */,
+				B0AA196526394B240064E637 /* Channel.swift in Sources */,
+				B0AA193C263928290064E637 /* VideoListCell.swift in Sources */,
+				B0AA193626391D0E0064E637 /* YoutubeViewController.swift in Sources */,
 				B08575DC2637AC4E00583DCE /* WhatViewController.swift in Sources */,
+				B0AA195526393BC70064E637 /* Video.swift in Sources */,
 				B08575E12637AC7600583DCE /* WantViewController.swift in Sources */,
+				B0AA196B2639723E0064E637 /* API.swift in Sources */,
 				B0827B9C2636593800F02744 /* ViewController.swift in Sources */,
 				B0827B982636593800F02744 /* AppDelegate.swift in Sources */,
 				B0827B9A2636593800F02744 /* SceneDelegate.swift in Sources */,
@@ -445,6 +653,7 @@
 		};
 		B0827BBF2636593C00F02744 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F4F3BCAEF6307609512AC1F /* Pods-DREAM CATCH.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +673,7 @@
 		};
 		B0827BC02636593C00F02744 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4054FF994EC3E54AA204D79B /* Pods-DREAM CATCH.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -483,6 +693,7 @@
 		};
 		B0827BC22636593C00F02744 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17297EB6B4EE0ECACD811943 /* Pods-DREAM CATCHTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -505,6 +716,7 @@
 		};
 		B0827BC32636593C00F02744 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1D3311B45509379D8378199 /* Pods-DREAM CATCHTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -527,6 +739,7 @@
 		};
 		B0827BC52636593C00F02744 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BF725FA12BF5D5364370114 /* Pods-DREAM CATCH-DREAM CATCHUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -547,6 +760,7 @@
 		};
 		B0827BC62636593C00F02744 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FF650E054E610819F5D5444 /* Pods-DREAM CATCH-DREAM CATCHUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
