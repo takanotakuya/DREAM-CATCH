@@ -20,19 +20,24 @@ class YoutubeViewController: UIViewController {
     @IBOutlet weak var videoListCollectionView: UICollectionView!
     
     private let cellId = "cellId"
+    private let attentionCellId = "atentionCellId"
     private var videoItems = [Item]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViews()
+        fetchYoutubeSerachInfo()
+    }
+    
+    private func setupViews() {
         videoListCollectionView.delegate = self
         videoListCollectionView.dataSource = self
         
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
+        videoListCollectionView.register(AttentionCell.self, forCellWithReuseIdentifier: attentionCellId)
         
         profileimageView.layer.cornerRadius = 20
-        
-        fetchYoutubeSerachInfo()
     }
     
     private func fetchYoutubeSerachInfo() {
@@ -126,16 +131,38 @@ extension YoutubeViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.view.frame.width
         
+        if indexPath.row == 2 {
+            return .init(width: width, height: 200)
+        } else {
+            return .init(width: width, height: width)
+        }
+        
         return .init(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videoItems.count
+        return videoItems.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! VideoListCell
-        cell.videoItem = videoItems[indexPath.row]
-        return cell
+        if indexPath.row == 2 {
+            let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: attentionCellId, for: indexPath) as! AttentionCell
+            cell.videoItems = self.videoItems
+            
+            return cell
+            
+        } else {
+            let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! VideoListCell
+            
+            if self.videoItems.count == 0 { return cell }
+            
+            if indexPath.row > 2 {
+                cell.videoItem = videoItems[indexPath.row - 1]
+            } else {
+                cell.videoItem = videoItems[indexPath.row]
+            }
+            
+            return cell
+        }
     }
 }

@@ -27,6 +27,9 @@
 		B0AA195526393BC70064E637 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA195426393BC70064E637 /* Video.swift */; };
 		B0AA196526394B240064E637 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA196426394B240064E637 /* Channel.swift */; };
 		B0AA196B2639723E0064E637 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA196A2639723E0064E637 /* API.swift */; };
+		B0AA19A9263A8F010064E637 /* AttentionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA19A8263A8F010064E637 /* AttentionCell.swift */; };
+		B0AA19AE263A99970064E637 /* AttentionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA19AD263A99960064E637 /* AttentionCollectionViewCell.swift */; };
+		B0AA19B3263A9A3E0064E637 /* AttentionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0AA19B2263A9A3E0064E637 /* AttentionCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		B0AA195426393BC70064E637 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		B0AA196426394B240064E637 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		B0AA196A2639723E0064E637 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B0AA19A8263A8F010064E637 /* AttentionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionCell.swift; sourceTree = "<group>"; };
+		B0AA19AD263A99960064E637 /* AttentionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionCollectionViewCell.swift; sourceTree = "<group>"; };
+		B0AA19B2263A9A3E0064E637 /* AttentionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttentionCollectionViewCell.xib; sourceTree = "<group>"; };
 		E1D3311B45509379D8378199 /* Pods-DREAM CATCHTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DREAM CATCHTests.release.xcconfig"; path = "Target Support Files/Pods-DREAM CATCHTests/Pods-DREAM CATCHTests.release.xcconfig"; sourceTree = "<group>"; };
 		F50853301C02A5B639E3CBA8 /* Pods_DREAM_CATCH_DREAM_CATCHUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DREAM_CATCH_DREAM_CATCHUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -185,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				B0AA193B263928290064E637 /* VideoListCell.swift */,
+				B0AA19A8263A8F010064E637 /* AttentionCell.swift */,
+				B0AA19AD263A99960064E637 /* AttentionCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				B0AA194426392A000064E637 /* VideoListCell.xib */,
+				B0AA19B2263A9A3E0064E637 /* AttentionCollectionViewCell.xib */,
 			);
 			path = xibs;
 			sourceTree = "<group>";
@@ -338,6 +347,7 @@
 				B0827BA42636593C00F02744 /* LaunchScreen.storyboard in Resources */,
 				B0AA194526392A000064E637 /* VideoListCell.xib in Resources */,
 				B0827BA12636593C00F02744 /* Assets.xcassets in Resources */,
+				B0AA19B3263A9A3E0064E637 /* AttentionCollectionViewCell.xib in Resources */,
 				B0827B9F2636593800F02744 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0AA19A9263A8F010064E637 /* AttentionCell.swift in Sources */,
 				B08575D72637AB0500583DCE /* DreamViewController.swift in Sources */,
 				B0AA196526394B240064E637 /* Channel.swift in Sources */,
 				B0AA193C263928290064E637 /* VideoListCell.swift in Sources */,
@@ -475,6 +486,7 @@
 				B08575E12637AC7600583DCE /* WantViewController.swift in Sources */,
 				B0AA196B2639723E0064E637 /* API.swift in Sources */,
 				B0827B9C2636593800F02744 /* ViewController.swift in Sources */,
+				B0AA19AE263A99970064E637 /* AttentionCollectionViewCell.swift in Sources */,
 				B0827B982636593800F02744 /* AppDelegate.swift in Sources */,
 				B0827B9A2636593800F02744 /* SceneDelegate.swift in Sources */,
 			);
