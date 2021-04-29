@@ -20,19 +20,24 @@ class YoutubeViewController: UIViewController {
     @IBOutlet weak var videoListCollectionView: UICollectionView!
     
     private let cellId = "cellId"
+    private let attentionCellId = "atentionCellId"
     private var videoItems = [Item]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViews()
+        fetchYoutubeSerachInfo()
+    }
+    
+    private func setupViews() {
         videoListCollectionView.delegate = self
         videoListCollectionView.dataSource = self
         
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
+        videoListCollectionView.register(AttentionCell.self, forCellWithReuseIdentifier: attentionCellId)
         
         profileimageView.layer.cornerRadius = 20
-        
-        fetchYoutubeSerachInfo()
     }
     
     private func fetchYoutubeSerachInfo() {
@@ -59,7 +64,33 @@ class YoutubeViewController: UIViewController {
         }
     }
     
+    private func headerViewEndAnimation() {
+        if headerTopConstraint.constant < -headerHightConstraint.constant / 2 {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
+                
+                self.headerTopConstraint.constant = -self.headerHightConstraint.constant
+                self.headerView.alpha = 0
+                self.view.layoutIfNeeded()
+            })
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
+                
+                self.headerTopConstraint.constant = 0
+                self.headerView.alpha = 1
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+}
+
+// MARK: - scrollViewのdelegateメソッド
+extension YoutubeViewController {
+    // scrollViewがscrollした時に呼ばれるメソッド
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        headerAnimation(scrollView: scrollView)
+    }
+    
+    private func headerAnimation(scrollView: UIScrollView) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.prevContentOfset = scrollView.contentOffset
         }
@@ -79,55 +110,59 @@ class YoutubeViewController: UIViewController {
             headerTopConstraint.constant += headerMoveHeight
             headerView.alpha += alphaRaitio * headerMoveHeight
         }
-        
-        print("self.prevContentOfset: ", self.prevContentOfset, "scrollView.contentOfset: ", scrollView.contentOffset)
     }
     
+    // scrollViewのscrollがピタッと止まった時に呼ばれる
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             headerViewEndAnimation()
         }
     }
     
+    // scrollViewが止まった時に呼ばれる
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         headerViewEndAnimation()
     }
-    
-    private func headerViewEndAnimation() {
-        if headerTopConstraint.constant < -headerHightConstraint.constant / 2 {
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
-                
-                self.headerTopConstraint.constant = -self.headerHightConstraint.constant
-                self.headerView.alpha = 0
-                self.view.layoutIfNeeded()
-            })
-        } else {
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
-                
-                self.headerTopConstraint.constant = 0
-                self.headerView.alpha = 1
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
-    
 }
 
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension YoutubeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.view.frame.width
         
+        if indexPath.row == 2 {
+            return .init(width: width, height: 200)
+        } else {
+            return .init(width: width, height: width)
+        }
+        
         return .init(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videoItems.count
+        return videoItems.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! VideoListCell
-        cell.videoItem = videoItems[indexPath.row]
-        return cell
+        if indexPath.row == 2 {
+            let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: attentionCellId, for: indexPath) as! AttentionCell
+            cell.videoItems = self.videoItems
+            
+            return cell
+            
+        } else {
+            let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! VideoListCell
+            
+            if self.videoItems.count == 0 { return cell }
+            
+            if indexPath.row > 2 {
+                cell.videoItem = videoItems[indexPath.row - 1]
+            } else {
+                cell.videoItem = videoItems[indexPath.row]
+            }
+            
+            return cell
+        }
     }
 }
