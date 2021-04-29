@@ -335,10 +335,10 @@
             </objects>
             <point key="canvasLocation" x="2096" y="80"/>
         </scene>
-        <!--Youtube View Controller-->
+        <!--Youtube List View Controller-->
         <scene sceneID="m4N-xQ-FTY">
             <objects>
-                <viewController id="qyc-uT-b8N" customClass="YoutubeViewController" customModule="DREAM_CATCH" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qyc-uT-b8N" customClass="YoutubeListViewController" customModule="DREAM_CATCH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qKi-SL-9B8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
