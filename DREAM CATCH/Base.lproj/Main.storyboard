@@ -443,6 +443,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="J38-pi-6eA"/>
                     <connections>
+                        <outlet property="headerHightConstraint" destination="d0U-yr-a9p" id="e9C-Js-mMP"/>
+                        <outlet property="headerTopConstraint" destination="fve-kt-p32" id="Zng-cL-YeC"/>
+                        <outlet property="headerView" destination="AKm-8g-6gm" id="rjJ-6K-BBh"/>
                         <outlet property="profileimageView" destination="YZ3-th-m1E" id="Il9-4m-VID"/>
                         <outlet property="videoListCollectionView" destination="BFx-fH-223" id="pOM-6C-cXI"/>
                     </connections>

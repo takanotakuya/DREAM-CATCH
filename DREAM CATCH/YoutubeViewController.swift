@@ -10,6 +10,12 @@ import Alamofire
 
 class YoutubeViewController: UIViewController {
     @IBOutlet weak var profileimageView: UIImageView!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerHightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
+    
+    private var prevContentOfset: CGPoint = .init(x: 0, y: 0)
+    private let headerMoveHeight: CGFloat = 5
     
     @IBOutlet weak var videoListCollectionView: UICollectionView!
     
@@ -50,6 +56,58 @@ class YoutubeViewController: UIViewController {
             }
             
             self.videoListCollectionView.reloadData()
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.prevContentOfset = scrollView.contentOffset
+        }
+        
+        guard let presentIndexPath = videoListCollectionView.indexPathForItem(at: scrollView.contentOffset) else { return }
+        if scrollView.contentOffset.y < 0 { return }
+        if presentIndexPath.row >= videoItems.count - 2 { return }
+        
+        let alphaRaitio = 1 / headerHightConstraint.constant
+        
+        if self.prevContentOfset.y < scrollView.contentOffset.y {
+            if headerTopConstraint.constant <= -headerHightConstraint.constant { return }
+            headerTopConstraint.constant -= headerMoveHeight
+            headerView.alpha -= alphaRaitio * headerMoveHeight
+        } else if self.prevContentOfset.y > scrollView.contentOffset.y {
+            if headerTopConstraint.constant >= 0 { return }
+            headerTopConstraint.constant += headerMoveHeight
+            headerView.alpha += alphaRaitio * headerMoveHeight
+        }
+        
+        print("self.prevContentOfset: ", self.prevContentOfset, "scrollView.contentOfset: ", scrollView.contentOffset)
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            headerViewEndAnimation()
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        headerViewEndAnimation()
+    }
+    
+    private func headerViewEndAnimation() {
+        if headerTopConstraint.constant < -headerHightConstraint.constant / 2 {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
+                
+                self.headerTopConstraint.constant = -self.headerHightConstraint.constant
+                self.headerView.alpha = 0
+                self.view.layoutIfNeeded()
+            })
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
+                
+                self.headerTopConstraint.constant = 0
+                self.headerView.alpha = 1
+                self.view.layoutIfNeeded()
+            })
         }
     }
     
