@@ -59,7 +59,33 @@ class YoutubeViewController: UIViewController {
         }
     }
     
+    private func headerViewEndAnimation() {
+        if headerTopConstraint.constant < -headerHightConstraint.constant / 2 {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
+                
+                self.headerTopConstraint.constant = -self.headerHightConstraint.constant
+                self.headerView.alpha = 0
+                self.view.layoutIfNeeded()
+            })
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
+                
+                self.headerTopConstraint.constant = 0
+                self.headerView.alpha = 1
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+}
+
+// MARK: - scrollViewのdelegateメソッド
+extension YoutubeViewController {
+    // scrollViewがscrollした時に呼ばれるメソッド
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        headerAnimation(scrollView: scrollView)
+    }
+    
+    private func headerAnimation(scrollView: UIScrollView) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.prevContentOfset = scrollView.contentOffset
         }
@@ -79,40 +105,22 @@ class YoutubeViewController: UIViewController {
             headerTopConstraint.constant += headerMoveHeight
             headerView.alpha += alphaRaitio * headerMoveHeight
         }
-        
-        print("self.prevContentOfset: ", self.prevContentOfset, "scrollView.contentOfset: ", scrollView.contentOffset)
     }
     
+    // scrollViewのscrollがピタッと止まった時に呼ばれる
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             headerViewEndAnimation()
         }
     }
     
+    // scrollViewが止まった時に呼ばれる
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         headerViewEndAnimation()
     }
-    
-    private func headerViewEndAnimation() {
-        if headerTopConstraint.constant < -headerHightConstraint.constant / 2 {
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
-                
-                self.headerTopConstraint.constant = -self.headerHightConstraint.constant
-                self.headerView.alpha = 0
-                self.view.layoutIfNeeded()
-            })
-        } else {
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
-                
-                self.headerTopConstraint.constant = 0
-                self.headerView.alpha = 1
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
-    
 }
 
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension YoutubeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
