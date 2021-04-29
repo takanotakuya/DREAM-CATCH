@@ -15,6 +15,7 @@ class YoutubeViewController: UIViewController {
     @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
     
     private var prevContentOfset: CGPoint = .init(x: 0, y: 0)
+    private let headerMoveHeight: CGFloat = 5
     
     @IBOutlet weak var videoListCollectionView: UICollectionView!
     
@@ -63,23 +64,29 @@ class YoutubeViewController: UIViewController {
             self.prevContentOfset = scrollView.contentOffset
         }
         
+        guard let presentIndexPath = videoListCollectionView.indexPathForItem(at: scrollView.contentOffset) else { return }
+        if scrollView.contentOffset.y < 0 { return }
+        if presentIndexPath.row >= videoItems.count - 2 { return }
+        
         let alphaRaitio = 1 / headerHightConstraint.constant
         
         if self.prevContentOfset.y < scrollView.contentOffset.y {
             if headerTopConstraint.constant <= -headerHightConstraint.constant { return }
-            headerTopConstraint.constant -= 1
-            headerView.alpha -= alphaRaitio
+            headerTopConstraint.constant -= headerMoveHeight
+            headerView.alpha -= alphaRaitio * headerMoveHeight
         } else if self.prevContentOfset.y > scrollView.contentOffset.y {
             if headerTopConstraint.constant >= 0 { return }
-            headerTopConstraint.constant += 1
-            headerView.alpha += alphaRaitio
+            headerTopConstraint.constant += headerMoveHeight
+            headerView.alpha += alphaRaitio * headerMoveHeight
         }
         
         print("self.prevContentOfset: ", self.prevContentOfset, "scrollView.contentOfset: ", scrollView.contentOffset)
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        headerViewEndAnimation()
+        if !decelerate {
+            headerViewEndAnimation()
+        }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
