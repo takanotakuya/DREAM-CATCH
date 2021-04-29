@@ -20,15 +20,5 @@
             </objects>
             <point key="canvasLocation" x="-909" y="-300"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="zDR-aE-7fC">
-            <objects>
-                <viewControllerPlaceholder id="Fzw-fV-6DB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Omj-SZ-jUL"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GNO-mo-I5y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-215" y="-375"/>
-        </scene>
     </scenes>
 </document>

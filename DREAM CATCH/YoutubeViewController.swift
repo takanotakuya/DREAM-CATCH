@@ -30,7 +30,7 @@ class YoutubeViewController: UIViewController {
     }
     
     private func fetchYoutubeSerachInfo() {
-        let params = ["q": "lebronjames"]
+        let params = ["q": "motivation"]
         
         API.shared.request(path: .search, params: params, type: Video.self) { (video) in
             self.videoItems = video.items
