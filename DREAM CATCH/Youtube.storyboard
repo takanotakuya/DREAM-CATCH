@@ -11,12 +11,20 @@
         <!--Youtube View Controller-->
         <scene sceneID="BLs-HY-Tz6">
             <objects>
-                <viewController storyboardIdentifier="YoutubeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qYn-w4-T8o" customClass="YoutubeViewController" customModule="DREAM_CATCH" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YoutubeViewController" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qYn-w4-T8o" customClass="YoutubeViewController" customModule="DREAM_CATCH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SRk-Lf-c6k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HJP-rO-VE4">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MzI-9t-KaJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEd-fT-iig">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HJP-rO-VE4">
                                 <rect key="frame" x="0.0" y="44" width="414" height="280"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
@@ -103,17 +111,27 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E0O-JE-KIZ"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="MzI-9t-KaJ" firstAttribute="leading" secondItem="E0O-JE-KIZ" secondAttribute="leading" id="8fT-pU-stE"/>
+                            <constraint firstItem="eEd-fT-iig" firstAttribute="top" secondItem="E0O-JE-KIZ" secondAttribute="top" id="91D-uR-oz4"/>
+                            <constraint firstItem="MzI-9t-KaJ" firstAttribute="trailing" secondItem="E0O-JE-KIZ" secondAttribute="trailing" id="CpF-m0-HKB"/>
+                            <constraint firstAttribute="bottom" secondItem="MzI-9t-KaJ" secondAttribute="bottom" id="D8Y-OV-YgK"/>
                             <constraint firstItem="W8m-CB-E4F" firstAttribute="top" secondItem="HJP-rO-VE4" secondAttribute="bottom" id="IQa-91-q5T"/>
                             <constraint firstItem="E0O-JE-KIZ" firstAttribute="trailing" secondItem="HJP-rO-VE4" secondAttribute="trailing" id="NyJ-RM-ggR"/>
+                            <constraint firstItem="eEd-fT-iig" firstAttribute="trailing" secondItem="E0O-JE-KIZ" secondAttribute="trailing" id="PNS-x0-E0C"/>
+                            <constraint firstAttribute="bottom" secondItem="eEd-fT-iig" secondAttribute="bottom" id="Zhk-5X-dqL"/>
                             <constraint firstItem="W8m-CB-E4F" firstAttribute="trailing" secondItem="E0O-JE-KIZ" secondAttribute="trailing" id="e1a-zI-x4q"/>
+                            <constraint firstItem="eEd-fT-iig" firstAttribute="leading" secondItem="E0O-JE-KIZ" secondAttribute="leading" id="ewV-Mr-wLf"/>
                             <constraint firstItem="HJP-rO-VE4" firstAttribute="top" secondItem="E0O-JE-KIZ" secondAttribute="top" id="gJp-EH-puT"/>
+                            <constraint firstItem="MzI-9t-KaJ" firstAttribute="top" secondItem="SRk-Lf-c6k" secondAttribute="top" id="pe3-GP-Yxs"/>
                             <constraint firstItem="HJP-rO-VE4" firstAttribute="leading" secondItem="E0O-JE-KIZ" secondAttribute="leading" id="vex-p8-uZC"/>
                             <constraint firstItem="W8m-CB-E4F" firstAttribute="leading" secondItem="E0O-JE-KIZ" secondAttribute="leading" id="wr4-yW-guD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backView" destination="eEd-fT-iig" id="QBW-X6-6eZ"/>
+                        <outlet property="baseBackGroundView" destination="MzI-9t-KaJ" id="vgy-K9-hvS"/>
                         <outlet property="channelImageView" destination="YQA-Ic-7OW" id="hj5-OD-GoM"/>
                         <outlet property="channelTitleLabel" destination="CPO-vA-gzc" id="hVh-is-Wqw"/>
                         <outlet property="videoImageView" destination="HJP-rO-VE4" id="Hg3-mh-AYY"/>

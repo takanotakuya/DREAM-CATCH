@@ -131,8 +131,6 @@ extension YoutubeListViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let youtubeViewController = UIStoryboard(name: "Youtube", bundle: nil).instantiateViewController(identifier: "YoutubeViewController") as YoutubeViewController
-        youtubeViewController.modalPresentationStyle = .fullScreen
-        
         
         youtubeViewController.selectedItem = indexPath.row > 2 ? videoItems[indexPath.row - 1]: videoItems[indexPath.row]
         
