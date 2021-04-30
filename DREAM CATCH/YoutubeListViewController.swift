@@ -35,8 +35,11 @@ class YoutubeListViewController: UIViewController {
     @IBOutlet weak var bottomVideoViewBottom: NSLayoutConstraint!
     @IBOutlet weak var bottomVideoImageWidth: NSLayoutConstraint!
     @IBOutlet weak var bottomVideoImageHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var bottomVideoViewTrailing: NSLayoutConstraint!
+    @IBOutlet weak var bottomSubscribeView: UIView!
+    @IBOutlet weak var bottomCloseButton: UIButton!
+    @IBOutlet weak var bottomVideoTitleLabel: UILabel!
+    @IBOutlet weak var bottomVideoDescribeLabel: UILabel!
     
     // MARK: LifeCycle Methods
     override func viewDidLoad() {
@@ -48,83 +51,21 @@ class YoutubeListViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(showThumbnailImage), name: .init("thumbnailImage"), object: nil)
     }
     
-    private func setupGestureRecognizer() {
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panBottomVideoView))
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapBottomVideoView))
-        bottomVideoView.addGestureRecognizer(tapGesture)
-        bottomVideoView.addGestureRecognizer(panGesture)
-    }
-    
-    @objc private func panBottomVideoView(sender: UIPanGestureRecognizer) {
-        let move = sender.translation(in: view)
-        
-        guard let imageView = sender.view else { return }
-        
-        if sender.state == .changed {
-            imageView.transform = CGAffineTransform(translationX: 0, y: move.y)
-        } else if sender.state == .ended {
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: []) {
-                imageView.transform = .identity
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
-    
-    @objc private func tapBottomVideoView() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: []) {
-            self.bottomVideoViewExpandAnimation()
-        } completion: { _ in
-            let youtubeViewController = UIStoryboard(name: "Youtube", bundle: nil).instantiateViewController(identifier: "YoutubeViewController") as YoutubeViewController
-            youtubeViewController.selectedItem = self.selectedItem
-            
-            self.present(youtubeViewController, animated: false) {
-                self.bottomVideoViewBackToIdentity()
-            }
-        }
-    }
-    
-    private func bottomVideoViewExpandAnimation() {
-        let topSafeArea = self.view.safeAreaInsets.top
-        let bottomSafeArea = self.view.safeAreaInsets.bottom
-        
-        // bottomVideoView
-        bottomVideoViewLeading.constant = 0
-        bottomVideoViewTrailing.constant = 0
-        bottomVideoViewBottom.constant = -bottomSafeArea
-        bottomVideoViewHeight.constant = view.frame.height - topSafeArea
-        
-        // bottomVideoImageView
-        bottomVideoImageWidth.constant = view.frame.width
-        bottomVideoImageHeight.constant = 280
-        
-        self.tabBarController?.tabBar.isHidden = true
-        self.view.layoutIfNeeded()
-    }
-    
-    private func bottomVideoViewBackToIdentity() {
-        // bottomVideoView
-        bottomVideoViewLeading.constant = 12
-        bottomVideoViewTrailing.constant = 12
-        bottomVideoViewBottom.constant = 65
-        bottomVideoViewHeight.constant = 70
-        
-        // bottomVideoImageView
-        bottomVideoImageWidth.constant = 150
-        bottomVideoImageHeight.constant = 70
-        
-        bottomVideoView.isHidden = true
-        self.tabBarController?.tabBar.isHidden = false
-    }
-    
     // MARK: Methods
     @objc private func showThumbnailImage(notification: NSNotification) {
         
-        guard let userInfo = notification.userInfo as? [String: UIImage] else { return }
-        let image = userInfo["image"]
+        guard let userInfo = notification.userInfo as? [String: Any],
+              let image = userInfo["image"] as? UIImage,
+              let videoImageMinY = userInfo["videoImageMinY"] as? CGFloat else { return }
+
+        let diffBottomConstant = videoImageMinY - self.bottomVideoView.frame.minY
         
+        bottomVideoViewBottom.constant -= diffBottomConstant
+        bottomSubscribeView.isHidden = false
         bottomVideoView.isHidden = false
         bottomVideoImageView.image = image
-        
+        bottomVideoTitleLabel.text = self.selectedItem?.snippet.title
+        bottomVideoDescribeLabel.text = self.selectedItem?.snippet.description
     }
     
     private func setupViews() {
@@ -138,7 +79,25 @@ class YoutubeListViewController: UIViewController {
         
         view.bringSubviewToFront(bottomVideoView)
         bottomVideoView.isHidden = true
+        
+        bottomCloseButton.addTarget(self, action: #selector(tappedBottomCloseButton), for: .touchUpInside)
+//        searchButton.addTarget(self, action: #selector(tappedSearchButton), for: .touchUpInside)
     }
+    
+    @objc private func tappedBottomCloseButton() {
+        UIView.animate(withDuration: 0.2) {
+            self.bottomVideoViewBottom.constant = -150
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+            self.bottomVideoView.isHidden = true
+            self.selectedItem = nil
+        }
+    }
+    
+}
+
+// MARK: - API通信
+extension YoutubeListViewController {
     
     private func fetchYoutubeSerachInfo() {
         let params = ["q": "motivation"]
@@ -164,23 +123,6 @@ class YoutubeListViewController: UIViewController {
         }
     }
     
-    private func headerViewEndAnimation() {
-        if headerTopConstraint.constant < -headerHightConstraint.constant / 2 {
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
-                
-                self.headerTopConstraint.constant = -self.headerHightConstraint.constant
-                self.headerView.alpha = 0
-                self.view.layoutIfNeeded()
-            })
-        } else {
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
-                
-                self.headerTopConstraint.constant = 0
-                self.headerView.alpha = 1
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
 }
 
 // MARK: - scrollViewのdelegateメソッド
@@ -280,4 +222,98 @@ extension YoutubeListViewController: UICollectionViewDelegate, UICollectionViewD
             return cell
         }
     }
+    
+}
+
+// MARK: - animation関連
+extension YoutubeListViewController {
+    
+    private func setupGestureRecognizer() {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panBottomVideoView))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapBottomVideoView))
+        bottomVideoView.addGestureRecognizer(tapGesture)
+        bottomVideoView.addGestureRecognizer(panGesture)
+    }
+    
+    @objc private func panBottomVideoView(sender: UIPanGestureRecognizer) {
+        let move = sender.translation(in: view)
+        
+        guard let imageView = sender.view else { return }
+        
+        if sender.state == .changed {
+            imageView.transform = CGAffineTransform(translationX: 0, y: move.y)
+        } else if sender.state == .ended {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: []) {
+                imageView.transform = .identity
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    @objc private func tapBottomVideoView() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: []) {
+            self.bottomSubscribeView.isHidden = true
+            
+            self.bottomVideoViewExpandAnimation()
+        } completion: { _ in
+            let youtubeViewController = UIStoryboard(name: "Youtube", bundle: nil).instantiateViewController(identifier: "YoutubeViewController") as YoutubeViewController
+            youtubeViewController.selectedItem = self.selectedItem
+            
+            self.present(youtubeViewController, animated: false) {
+                self.bottomVideoViewBackToIdentity()
+            }
+        }
+    }
+    
+    private func bottomVideoViewExpandAnimation() {
+        let topSafeArea = self.view.safeAreaInsets.top
+        let bottomSafeArea = self.view.safeAreaInsets.bottom
+        
+        // bottomVideoView
+        bottomVideoViewLeading.constant = 0
+        bottomVideoViewTrailing.constant = 0
+        bottomVideoViewBottom.constant = -bottomSafeArea
+        bottomVideoViewHeight.constant = view.frame.height - topSafeArea
+        
+        // bottomVideoImageView
+        bottomVideoImageWidth.constant = view.frame.width
+        bottomVideoImageHeight.constant = 280
+        
+        self.tabBarController?.tabBar.isHidden = true
+        self.view.layoutIfNeeded()
+    }
+    
+    private func bottomVideoViewBackToIdentity() {
+        // bottomVideoView
+        bottomVideoViewLeading.constant = 12
+        bottomVideoViewTrailing.constant = 12
+        bottomVideoViewBottom.constant = 65
+        bottomVideoViewHeight.constant = 70
+        
+        // bottomVideoImageView
+        bottomVideoImageWidth.constant = 150
+        bottomVideoImageHeight.constant = 70
+        
+        bottomVideoView.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func headerViewEndAnimation() {
+        if headerTopConstraint.constant < -headerHightConstraint.constant / 2 {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
+                
+                self.headerTopConstraint.constant = -self.headerHightConstraint.constant
+                self.headerView.alpha = 0
+                self.view.layoutIfNeeded()
+            })
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
+                
+                self.headerTopConstraint.constant = 0
+                self.headerView.alpha = 1
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
 }
