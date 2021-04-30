@@ -24,7 +24,7 @@ class API {
         let url = baseUrl + path + "?"
         
         var params = params
-        params["key"] = "AIzaSyBMchvJKgYkEVGgw2BdAcT9q_-y6pu9QHA"
+        params["key"] = "AIzaSyCp917NVXOktjMutAZogZpAiHb2k9TMtI0"
         params["part"] = "snippet"
         
         let request = AF.request(url, method: .get, parameters: params)

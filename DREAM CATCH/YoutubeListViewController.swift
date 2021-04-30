@@ -132,7 +132,7 @@ extension YoutubeListViewController: UICollectionViewDelegate, UICollectionViewD
 
         let youtubeViewController = UIStoryboard(name: "Youtube", bundle: nil).instantiateViewController(identifier: "YoutubeViewController") as YoutubeViewController
         
-        youtubeViewController.selectedItem = indexPath.row > 2 ? videoItems[indexPath.row - 1]: videoItems[indexPath.row]
+        youtubeViewController.selectedItem = indexPath.row > 2 ? videoItems[indexPath.row - 1] : videoItems[indexPath.row]
         
         self.present(youtubeViewController, animated: true, completion: nil)
     }
