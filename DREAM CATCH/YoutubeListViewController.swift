@@ -28,6 +28,7 @@ class YoutubeListViewController: UIViewController {
     
     @IBOutlet weak var bottomVideoImageView: UIImageView!
     @IBOutlet weak var bottomVideoView: UIView!
+    @IBOutlet weak var searchButton: UIButton!
     
     // bottomImageViewの制約
     @IBOutlet weak var bottomVideoViewLeading: NSLayoutConstraint!
@@ -81,7 +82,14 @@ class YoutubeListViewController: UIViewController {
         bottomVideoView.isHidden = true
         
         bottomCloseButton.addTarget(self, action: #selector(tappedBottomCloseButton), for: .touchUpInside)
-//        searchButton.addTarget(self, action: #selector(tappedSearchButton), for: .touchUpInside)
+        searchButton.addTarget(self, action: #selector(tappedSearchButton), for: .touchUpInside)
+    }
+    
+    @objc private func tappedSearchButton() {
+        let searchController = SearchViewController()
+        let nav = UINavigationController(rootViewController: searchController)
+        self.present(nav, animated: true, completion: nil)
+        
     }
     
     @objc private func tappedBottomCloseButton() {
