@@ -2,167 +2,233 @@
 //  YoutubeViewController.swift
 //  DREAM CATCH
 //
-//  Created by 髙野拓弥 on 2021/04/28.
+//  Created by 髙野拓弥 on 2021/04/29.
 //
 
 import UIKit
-import Alamofire
+import Nuke
 
 class YoutubeViewController: UIViewController {
-    @IBOutlet weak var profileimageView: UIImageView!
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var headerHightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
     
-    private var prevContentOfset: CGPoint = .init(x: 0, y: 0)
-    private let headerMoveHeight: CGFloat = 5
+    var selectedItem: Item?
+    private var imageViewCenterY: CGFloat?
     
-    @IBOutlet weak var videoListCollectionView: UICollectionView!
+    var videoImageMaxY: CGFloat {
+        let ecludeValue = view.safeAreaInsets.bottom + (imageViewCenterY ?? 0)
+        return view.frame.maxY - ecludeValue
+    }
     
-    private let cellId = "cellId"
-    private let attentionCellId = "atentionCellId"
-    private var videoItems = [Item]()
+    var minimumImageViewTrailingConstant: CGFloat {
+        view.frame.width - (150 + 12)
+    }
+    
+    // videoImageView
+    @IBOutlet weak var videoImageView: UIImageView!
+    @IBOutlet weak var videoImageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var videoImageViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var videoImageViewTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var videoImageBackView: UIView!
+    
+    // backView
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var backViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var backViewTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var backViewBottomConstraint: NSLayoutConstraint!
+    
+    // describeView
+    @IBOutlet weak var describeView: UIView!
+    @IBOutlet weak var describeViewTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var channelImageView: UIImageView!
+    @IBOutlet weak var videoTitleLabel: UILabel!
+    @IBOutlet weak var channelTitleLabel: UILabel!
+    @IBOutlet weak var baseBackGroundView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
-        fetchYoutubeSerachInfo()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.baseBackGroundView.alpha = 1
+        }
+        
     }
     
     private func setupViews() {
-        videoListCollectionView.delegate = self
-        videoListCollectionView.dataSource = self
+        self.view.bringSubviewToFront(videoImageView)
         
-        videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
-        videoListCollectionView.register(AttentionCell.self, forCellWithReuseIdentifier: attentionCellId)
+        imageViewCenterY = videoImageView.center.y
         
-        profileimageView.layer.cornerRadius = 20
-    }
-    
-    private func fetchYoutubeSerachInfo() {
-        let params = ["q": "motivation"]
+        channelImageView.layer.cornerRadius = 45 / 2
         
-        API.shared.request(path: .search, params: params, type: Video.self) { (video) in
-            self.videoItems = video.items
-            let id = self.videoItems[0].snippet.channelId
-            self.fetchYoutubeChannelInfo(id: id)
+        if let url = URL(string: selectedItem?.snippet.thumbnails.medium.url ?? "") {
+            Nuke.loadImage(with: url, into: videoImageView)
         }
+        
+        if let channelUrl = URL(string: selectedItem?.channel?.items[0].snippet.thumbnails.medium.url ?? "") {
+            Nuke.loadImage(with: channelUrl, into: channelImageView)
+        }
+        
+        videoTitleLabel.text = selectedItem?.snippet.title
+        channelTitleLabel.text = selectedItem?.channel?.items[0].snippet.title
+        
+        let panGeture = UIPanGestureRecognizer(target: self, action: #selector(panVideoImageView))
+        videoImageView.addGestureRecognizer(panGeture)
+        
     }
     
-    private func fetchYoutubeChannelInfo(id: String) {
-        let params = [
-            "id": id
-        ]
+    @objc private func panVideoImageView(gesture: UIPanGestureRecognizer) {
         
-        API.shared.request(path: .channels, params: params, type: Channel.self) { (channel) in
-            self.videoItems.forEach { (item) in
-                item.channel = channel
+        guard let imageView = gesture.view else { return }
+        let move = gesture.translation(in: imageView)
+        
+        if gesture.state == .changed {
+            
+            if videoImageMaxY <= move.y {
+                moveToBottom(imageView: imageView as! UIImageView)
+                return
             }
             
-            self.videoListCollectionView.reloadData()
+            imageView.transform = CGAffineTransform(translationX: 0, y: move.y)
+            videoImageBackView.transform = CGAffineTransform(translationX: 0, y: move.y)
+            
+            // 左右のpadding設定
+            self.adjustPaddingChange(move: move)
+            
+            // imageViewの高さの動き
+            // 280(最大値) - 70(最小値) = 210
+            self.adjustHeightChange(move: move)
+            
+            // alpha値の設定
+            self.adjustAlphaChange(move: move)
+            
+            // imageViewの横幅の動き 150(最小値)
+            self.adjustWidthChange(move: move)
+            
+        } else if gesture.state == .ended {
+            
+            self.imageViewEndedAnimation(move: move, imageView: imageView as! UIImageView)
+            
         }
     }
     
-    private func headerViewEndAnimation() {
-        if headerTopConstraint.constant < -headerHightConstraint.constant / 2 {
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
+    // MARK: imageViewのpanGestureのstatusが、[.change]の時の動き
+    private func adjustPaddingChange(move: CGPoint) {
+        let movingConstant = move.y / 30
+        
+        if movingConstant <= 12 {
+            videoImageViewTrailingConstraint.constant = -movingConstant
+            videoImageViewLeadingConstraint.constant = movingConstant
+            
+            backViewTrailingConstraint.constant = -movingConstant
+        }
+    }
+    
+    private func adjustHeightChange(move: CGPoint) {
+        let parantViewHeight = self.view.frame.height
+        let heightRatio = 210 / videoImageMaxY
+        let moveHeight = move.y * heightRatio
+        
+        backViewTopConstraint.constant = move.y
+        videoImageViewHeightConstraint.constant = 280 - moveHeight
+        describeViewTopConstraint.constant = move.y * 0.8
+        
+        let bottomMoveY = parantViewHeight - videoImageMaxY
+        let bottomMoveRatio = bottomMoveY / videoImageMaxY
+        let bottomMoveConstant = move.y * bottomMoveRatio
+        backViewBottomConstraint.constant = bottomMoveConstant
+    }
+    
+    private func adjustAlphaChange(move: CGPoint) {
+        let alphaRatio = move.y / (self.view.frame.height / 2)
+        describeView.alpha = 1 - alphaRatio
+        baseBackGroundView.alpha = 1 - alphaRatio
+    }
+    
+    private func adjustWidthChange(move: CGPoint) {
+        let originalWidth = self.view.frame.width
+        let constant = originalWidth - move.y
+        
+        if minimumImageViewTrailingConstant > constant {
+            videoImageViewTrailingConstraint.constant = minimumImageViewTrailingConstant
+            return
+        }
+        
+        if constant < -12 {
+            videoImageViewTrailingConstraint.constant = constant
+        }
+    }
+    
+    // MARK: imageViewのpanGestureのstatusが、[.ended]の時の動き
+    private func imageViewEndedAnimation(move: CGPoint, imageView: UIImageView) {
+        if move.y < self.view.frame.height / 3 {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: [], animations: {
                 
-                self.headerTopConstraint.constant = -self.headerHightConstraint.constant
-                self.headerView.alpha = 0
-                self.view.layoutIfNeeded()
+                self.backToIdentityAllViews(imageView: imageView)
             })
         } else {
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: []) {
                 
-                self.headerTopConstraint.constant = 0
-                self.headerView.alpha = 1
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
-}
-
-// MARK: - scrollViewのdelegateメソッド
-extension YoutubeViewController {
-    // scrollViewがscrollした時に呼ばれるメソッド
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        headerAnimation(scrollView: scrollView)
-    }
-    
-    private func headerAnimation(scrollView: UIScrollView) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.prevContentOfset = scrollView.contentOffset
-        }
-        
-        guard let presentIndexPath = videoListCollectionView.indexPathForItem(at: scrollView.contentOffset) else { return }
-        if scrollView.contentOffset.y < 0 { return }
-        if presentIndexPath.row >= videoItems.count - 2 { return }
-        
-        let alphaRaitio = 1 / headerHightConstraint.constant
-        
-        if self.prevContentOfset.y < scrollView.contentOffset.y {
-            if headerTopConstraint.constant <= -headerHightConstraint.constant { return }
-            headerTopConstraint.constant -= headerMoveHeight
-            headerView.alpha -= alphaRaitio * headerMoveHeight
-        } else if self.prevContentOfset.y > scrollView.contentOffset.y {
-            if headerTopConstraint.constant >= 0 { return }
-            headerTopConstraint.constant += headerMoveHeight
-            headerView.alpha += alphaRaitio * headerMoveHeight
-        }
-    }
-    
-    // scrollViewのscrollがピタッと止まった時に呼ばれる
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !decelerate {
-            headerViewEndAnimation()
-        }
-    }
-    
-    // scrollViewが止まった時に呼ばれる
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        headerViewEndAnimation()
-    }
-}
-
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-extension YoutubeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.view.frame.width
-        
-        if indexPath.row == 2 {
-            return .init(width: width, height: 200)
-        } else {
-            return .init(width: width, height: width)
-        }
-        
-        return .init(width: width, height: width)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videoItems.count + 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 2 {
-            let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: attentionCellId, for: indexPath) as! AttentionCell
-            cell.videoItems = self.videoItems
-            
-            return cell
-            
-        } else {
-            let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! VideoListCell
-            
-            if self.videoItems.count == 0 { return cell }
-            
-            if indexPath.row > 2 {
-                cell.videoItem = videoItems[indexPath.row - 1]
-            } else {
-                cell.videoItem = videoItems[indexPath.row]
+                self.moveToBottom(imageView: imageView)
+                
+            } completion: { _ in
+                
+                UIView.animate(withDuration: 0.2) {
+                    
+                    self.videoImageView.isHidden = true
+                    self.videoImageBackView.isHidden = true
+                    
+                    let image = self.videoImageView.image
+                    let userInfo: [String: Any] = ["image": image, "videoImageMinY": self.videoImageView.frame.minY]
+                    
+                    NotificationCenter.default.post(name: .init("thumbnailImage"), object: nil, userInfo: userInfo as [AnyHashable : Any])
+                    
+                } completion: { _ in
+                    self.dismiss(animated: false, completion: nil)
+                }
             }
-            
-            return cell
         }
     }
+    
+    private func moveToBottom(imageView: UIImageView) {
+        // imageViewの設定
+        imageView.transform = CGAffineTransform(translationX: 0, y: videoImageMaxY)
+        videoImageViewTrailingConstraint.constant = minimumImageViewTrailingConstant
+        videoImageViewHeightConstraint.constant = 70
+        videoImageViewLeadingConstraint.constant = 12
+        
+        videoImageBackView.transform = CGAffineTransform(translationX: 0, y: videoImageMaxY)
+        describeView.alpha = 0
+        backView.alpha = 0
+        baseBackGroundView.alpha = 0
+    }
+    
+    private func backToIdentityAllViews(imageView: UIImageView) {
+        // imageViewの設定
+        imageView.transform = .identity
+        videoImageViewHeightConstraint.constant = 280
+        videoImageViewLeadingConstraint.constant = 0
+        videoImageViewTrailingConstraint.constant = 0
+        
+        // backViewの設定
+        backViewTrailingConstraint.constant = 0
+        backViewBottomConstraint.constant = 0
+        backViewTopConstraint.constant = 0
+        backView.alpha = 1
+        
+        // describeViewの設定
+        describeViewTopConstraint.constant = 0
+        describeView.alpha = 1
+        
+        baseBackGroundView.alpha = 1
+        
+        self.view.layoutIfNeeded()
+    }
+    
 }
