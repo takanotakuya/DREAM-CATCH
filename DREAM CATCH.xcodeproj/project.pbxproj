@@ -32,6 +32,7 @@
 		B0AA19B3263A9A3E0064E637 /* AttentionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0AA19B2263A9A3E0064E637 /* AttentionCollectionViewCell.xib */; };
 		B0AA19C8263AA8440064E637 /* YoutubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA19C7263AA8440064E637 /* YoutubeViewController.swift */; };
 		B0AA19D8263AA9420064E637 /* Youtube.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AA19D7263AA9420064E637 /* Youtube.storyboard */; };
+		B0F7F7B6263C1A3D00F33063 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7F7B5263C1A3C00F33063 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		B0AA19B2263A9A3E0064E637 /* AttentionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttentionCollectionViewCell.xib; sourceTree = "<group>"; };
 		B0AA19C7263AA8440064E637 /* YoutubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeViewController.swift; sourceTree = "<group>"; };
 		B0AA19D7263AA9420064E637 /* Youtube.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Youtube.storyboard; sourceTree = "<group>"; };
+		B0F7F7B5263C1A3C00F33063 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E1D3311B45509379D8378199 /* Pods-DREAM CATCHTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DREAM CATCHTests.release.xcconfig"; path = "Target Support Files/Pods-DREAM CATCHTests/Pods-DREAM CATCHTests.release.xcconfig"; sourceTree = "<group>"; };
 		F50853301C02A5B639E3CBA8 /* Pods_DREAM_CATCH_DREAM_CATCHUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DREAM_CATCH_DREAM_CATCHUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,12 +162,13 @@
 				B0AA193A263927CA0064E637 /* Cells */,
 				B0827B972636593800F02744 /* AppDelegate.swift */,
 				B0827B992636593800F02744 /* SceneDelegate.swift */,
-				B08575D62637AB0500583DCE /* DreamViewController.swift */,
 				B0827B9B2636593800F02744 /* ViewController.swift */,
-				B0AA193526391D0E0064E637 /* YoutubeListViewController.swift */,
-				B0AA19C7263AA8440064E637 /* YoutubeViewController.swift */,
+				B08575D62637AB0500583DCE /* DreamViewController.swift */,
 				B08575DB2637AC4E00583DCE /* WhatViewController.swift */,
 				B08575E02637AC7600583DCE /* WantViewController.swift */,
+				B0AA193526391D0E0064E637 /* YoutubeListViewController.swift */,
+				B0AA19C7263AA8440064E637 /* YoutubeViewController.swift */,
+				B0F7F7B5263C1A3C00F33063 /* SearchViewController.swift */,
 				B0827BA22636593C00F02744 /* LaunchScreen.storyboard */,
 				B0827B9D2636593800F02744 /* Main.storyboard */,
 				B0AA19D7263AA9420064E637 /* Youtube.storyboard */,
@@ -483,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F7F7B6263C1A3D00F33063 /* SearchViewController.swift in Sources */,
 				B0AA19A9263A8F010064E637 /* AttentionCell.swift in Sources */,
 				B08575D72637AB0500583DCE /* DreamViewController.swift in Sources */,
 				B0AA196526394B240064E637 /* Channel.swift in Sources */,
