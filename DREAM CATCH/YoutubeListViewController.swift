@@ -10,6 +10,16 @@ import Alamofire
 
 class YoutubeListViewController: UIViewController {
     
+    // MARK: Propeties
+    private var prevContentOfset: CGPoint = .init(x: 0, y: 0)
+    private let headerMoveHeight: CGFloat = 5
+    
+    private let cellId = "cellId"
+    private let attentionCellId = "atentionCellId"
+    private var videoItems = [Item]()
+    private var selectedItem: Item?
+    
+    // MARK: IBOutlets
     @IBOutlet weak var videoListCollectionView: UICollectionView!
     @IBOutlet weak var profileimageView: UIImageView!
     @IBOutlet weak var headerView: UIView!
@@ -19,21 +29,77 @@ class YoutubeListViewController: UIViewController {
     @IBOutlet weak var bottomVideoImageView: UIImageView!
     @IBOutlet weak var bottomVideoView: UIView!
     
-    private var prevContentOfset: CGPoint = .init(x: 0, y: 0)
-    private let headerMoveHeight: CGFloat = 5
+    // bottomImageViewの制約
+    @IBOutlet weak var bottomVideoViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var bottomVideoViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var bottomVideoViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var bottomVideoImageWidth: NSLayoutConstraint!
+    @IBOutlet weak var bottomVideoImageHeight: NSLayoutConstraint!
     
-    private let cellId = "cellId"
-    private let attentionCellId = "atentionCellId"
-    private var videoItems = [Item]()
+    @IBOutlet weak var bottomVideoViewTrailing: NSLayoutConstraint!
     
+    // MARK: LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         fetchYoutubeSerachInfo()
+        setupGestureRecognizer()
         NotificationCenter.default.addObserver(self, selector: #selector(showThumbnailImage), name: .init("thumbnailImage"), object: nil)
     }
     
+    private func setupGestureRecognizer() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapBottomVideoView))
+        bottomVideoView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func tapBottomVideoView() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: []) {
+            self.bottomVideoViewExpandAnimation()
+        } completion: { _ in
+            let youtubeViewController = UIStoryboard(name: "Youtube", bundle: nil).instantiateViewController(identifier: "YoutubeViewController") as YoutubeViewController
+            youtubeViewController.selectedItem = self.selectedItem
+            
+            self.present(youtubeViewController, animated: false) {
+                self.bottomVideoViewBackToIdentity()
+            }
+        }
+    }
+    
+    private func bottomVideoViewExpandAnimation() {
+        let topSafeArea = self.view.safeAreaInsets.top
+        let bottomSafeArea = self.view.safeAreaInsets.bottom
+        
+        // bottomVideoView
+        bottomVideoViewLeading.constant = 0
+        bottomVideoViewTrailing.constant = 0
+        bottomVideoViewBottom.constant = -bottomSafeArea
+        bottomVideoViewHeight.constant = view.frame.height - topSafeArea
+        
+        // bottomVideoImageView
+        bottomVideoImageWidth.constant = view.frame.width
+        bottomVideoImageHeight.constant = 280
+        
+        self.tabBarController?.tabBar.isHidden = true
+        self.view.layoutIfNeeded()
+    }
+    
+    private func bottomVideoViewBackToIdentity() {
+        // bottomVideoView
+        bottomVideoViewLeading.constant = 12
+        bottomVideoViewTrailing.constant = 12
+        bottomVideoViewBottom.constant = 65
+        bottomVideoViewHeight.constant = 70
+        
+        // bottomVideoImageView
+        bottomVideoImageWidth.constant = 150
+        bottomVideoImageHeight.constant = 70
+        
+        bottomVideoView.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    // MARK: Methods
     @objc private func showThumbnailImage(notification: NSNotification) {
         
         guard let userInfo = notification.userInfo as? [String: UIImage] else { return }
@@ -53,6 +119,7 @@ class YoutubeListViewController: UIViewController {
         
         profileimageView.layer.cornerRadius = 20
         
+        view.bringSubviewToFront(bottomVideoView)
         bottomVideoView.isHidden = true
     }
     
@@ -150,8 +217,11 @@ extension YoutubeListViewController: UICollectionViewDelegate, UICollectionViewD
         
         if videoItems.count == 0 {
             youtubeViewController.selectedItem = nil
+            self.selectedItem = nil
         } else {
-            youtubeViewController.selectedItem = indexPath.row > 2 ? videoItems[indexPath.row - 1] : videoItems[indexPath.row]
+            let item = indexPath.row > 2 ? videoItems[indexPath.row - 1] : videoItems[indexPath.row]
+            youtubeViewController.selectedItem = item
+            self.selectedItem = item
         }
         
         bottomVideoView.isHidden = true

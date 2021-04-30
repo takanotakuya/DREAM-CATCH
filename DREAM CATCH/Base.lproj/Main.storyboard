@@ -370,6 +370,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="70"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="xTW-N8-q4w"/>
                                             <constraint firstAttribute="width" constant="150" id="xnI-0I-qhs"/>
                                         </constraints>
                                     </imageView>
@@ -377,7 +378,6 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="UJ8-A8-mlr" firstAttribute="leading" secondItem="Bhb-Rc-lGE" secondAttribute="leading" id="1fL-3E-kbP"/>
-                                    <constraint firstAttribute="bottom" secondItem="UJ8-A8-mlr" secondAttribute="bottom" id="BtH-2r-yc1"/>
                                     <constraint firstAttribute="height" constant="70" id="KcD-0P-kM9"/>
                                     <constraint firstItem="UJ8-A8-mlr" firstAttribute="top" secondItem="Bhb-Rc-lGE" secondAttribute="top" id="Nwa-8b-thH"/>
                                 </constraints>
@@ -465,8 +465,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="J38-pi-6eA"/>
                     <connections>
+                        <outlet property="bottomVideoImageHeight" destination="xTW-N8-q4w" id="rr6-Py-Yhp"/>
                         <outlet property="bottomVideoImageView" destination="UJ8-A8-mlr" id="hQl-3f-XQb"/>
+                        <outlet property="bottomVideoImageWidth" destination="xnI-0I-qhs" id="s1d-bN-qXA"/>
                         <outlet property="bottomVideoView" destination="Bhb-Rc-lGE" id="gRv-Fq-QMY"/>
+                        <outlet property="bottomVideoViewBottom" destination="bGV-31-ykH" id="4OG-b2-R6E"/>
+                        <outlet property="bottomVideoViewHeight" destination="KcD-0P-kM9" id="b7m-eP-TUz"/>
+                        <outlet property="bottomVideoViewLeading" destination="wIe-nl-5aQ" id="1zU-D3-bAs"/>
+                        <outlet property="bottomVideoViewTrailing" destination="aOC-QX-6lx" id="0fl-7j-vdW"/>
                         <outlet property="headerHightConstraint" destination="d0U-yr-a9p" id="e9C-Js-mMP"/>
                         <outlet property="headerTopConstraint" destination="fve-kt-p32" id="Zng-cL-YeC"/>
                         <outlet property="headerView" destination="AKm-8g-6gm" id="rjJ-6K-BBh"/>
