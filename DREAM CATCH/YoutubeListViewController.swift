@@ -9,15 +9,18 @@ import UIKit
 import Alamofire
 
 class YoutubeListViewController: UIViewController {
+    
+    @IBOutlet weak var videoListCollectionView: UICollectionView!
     @IBOutlet weak var profileimageView: UIImageView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerHightConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var bottomVideoImageView: UIImageView!
+    @IBOutlet weak var bottomVideoView: UIView!
+    
     private var prevContentOfset: CGPoint = .init(x: 0, y: 0)
     private let headerMoveHeight: CGFloat = 5
-    
-    @IBOutlet weak var videoListCollectionView: UICollectionView!
     
     private let cellId = "cellId"
     private let attentionCellId = "atentionCellId"
@@ -28,6 +31,17 @@ class YoutubeListViewController: UIViewController {
         
         setupViews()
         fetchYoutubeSerachInfo()
+        NotificationCenter.default.addObserver(self, selector: #selector(showThumbnailImage), name: .init("thumbnailImage"), object: nil)
+    }
+    
+    @objc private func showThumbnailImage(notification: NSNotification) {
+        
+        guard let userInfo = notification.userInfo as? [String: UIImage] else { return }
+        let image = userInfo["image"]
+        
+        bottomVideoView.isHidden = false
+        bottomVideoImageView.image = image
+        
     }
     
     private func setupViews() {
@@ -38,6 +52,8 @@ class YoutubeListViewController: UIViewController {
         videoListCollectionView.register(AttentionCell.self, forCellWithReuseIdentifier: attentionCellId)
         
         profileimageView.layer.cornerRadius = 20
+        
+        bottomVideoView.isHidden = true
     }
     
     private func fetchYoutubeSerachInfo() {
@@ -132,8 +148,13 @@ extension YoutubeListViewController: UICollectionViewDelegate, UICollectionViewD
 
         let youtubeViewController = UIStoryboard(name: "Youtube", bundle: nil).instantiateViewController(identifier: "YoutubeViewController") as YoutubeViewController
         
-        youtubeViewController.selectedItem = indexPath.row > 2 ? videoItems[indexPath.row - 1] : videoItems[indexPath.row]
+        if videoItems.count == 0 {
+            youtubeViewController.selectedItem = nil
+        } else {
+            youtubeViewController.selectedItem = indexPath.row > 2 ? videoItems[indexPath.row - 1] : videoItems[indexPath.row]
+        }
         
+        bottomVideoView.isHidden = true
         self.present(youtubeViewController, animated: true, completion: nil)
     }
     
