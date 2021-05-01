@@ -201,18 +201,28 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nar-lc-ULY">
-                                <rect key="frame" x="153" y="782" width="108" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nar-lc-ULY">
+                                <rect key="frame" x="90" y="785" width="108" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="108" id="CfB-Io-0aY"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="YouTubeAPI">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="qyc-uT-b8N" kind="show" id="eAL-GE-SKL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLJ-nO-KUD">
+                                <rect key="frame" x="232" y="785" width="85" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="名言API">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jRt-R9-0X5" kind="show" id="Vsg-Zd-Mmb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -230,7 +240,6 @@
                             <constraint firstItem="F1K-S3-Y3W" firstAttribute="top" secondItem="eU2-V7-Ebx" secondAttribute="bottom" constant="56" id="BxT-6r-Noo"/>
                             <constraint firstItem="vQ7-ZZ-fF0" firstAttribute="leading" secondItem="h2o-vz-RVU" secondAttribute="trailing" constant="5" id="Dto-mH-Uce"/>
                             <constraint firstItem="vQ7-ZZ-fF0" firstAttribute="top" secondItem="7i0-gO-eXo" secondAttribute="bottom" constant="56" id="EDq-Em-wkh"/>
-                            <constraint firstItem="Nar-lc-ULY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="153" id="GLV-vu-YFZ"/>
                             <constraint firstItem="kIS-2O-xRU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KHS-UL-IzC"/>
                             <constraint firstItem="7i0-gO-eXo" firstAttribute="top" secondItem="6bt-dI-umn" secondAttribute="bottom" constant="20" id="MT0-bR-AOO"/>
                             <constraint firstItem="eU2-V7-Ebx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="O3p-E5-JQj"/>
@@ -240,7 +249,6 @@
                             <constraint firstItem="lTW-iM-Y5x" firstAttribute="leading" secondItem="CED-ac-JZ2" secondAttribute="trailing" constant="20" id="PeH-dk-N3C"/>
                             <constraint firstItem="7i0-gO-eXo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QG0-OX-PFh"/>
                             <constraint firstItem="BV6-va-ahW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="R3q-Qz-Bv8"/>
-                            <constraint firstItem="Nar-lc-ULY" firstAttribute="top" secondItem="q5B-hD-rmv" secondAttribute="bottom" constant="25" id="SSt-v9-yEV"/>
                             <constraint firstItem="CED-ac-JZ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="T4D-Xm-olE"/>
                             <constraint firstItem="ybw-Ij-Zau" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="X81-fD-xyW"/>
                             <constraint firstItem="6bt-dI-umn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="b4o-In-8zu"/>
@@ -257,7 +265,6 @@
                             <constraint firstItem="ybw-Ij-Zau" firstAttribute="leading" secondItem="6bt-dI-umn" secondAttribute="trailing" constant="20" id="u2x-A2-O5x"/>
                             <constraint firstItem="6oT-hh-bhU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vMk-DF-9Rc"/>
                             <constraint firstItem="h2o-vz-RVU" firstAttribute="leading" secondItem="qha-i3-G51" secondAttribute="trailing" constant="20" id="yaX-SP-HCv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nar-lc-ULY" secondAttribute="trailing" constant="153" id="ykp-jr-BTY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="DREAM CATCH" id="Zkh-Tb-tQn"/>
@@ -334,6 +341,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozA-Go-zCy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2096" y="80"/>
+        </scene>
+        <!--Quotations View Controller-->
+        <scene sceneID="1FS-zw-frW">
+            <objects>
+                <viewController id="jRt-R9-0X5" customClass="QuotationsViewController" customModule="DREAM_CATCH" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Ee-BL-dGg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mmF-0V-WLY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yeu-W1-m51"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OvG-RB-AEf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="872"/>
         </scene>
         <!--Youtube List View Controller-->
         <scene sceneID="m4N-xQ-FTY">
