@@ -528,6 +528,7 @@
                         <outlet property="headerTopConstraint" destination="fve-kt-p32" id="Zng-cL-YeC"/>
                         <outlet property="headerView" destination="AKm-8g-6gm" id="rjJ-6K-BBh"/>
                         <outlet property="profileimageView" destination="YZ3-th-m1E" id="Il9-4m-VID"/>
+                        <outlet property="searchButton" destination="0GX-R1-YpH" id="csC-06-y9h"/>
                         <outlet property="videoListCollectionView" destination="BFx-fH-223" id="pOM-6C-cXI"/>
                     </connections>
                 </viewController>

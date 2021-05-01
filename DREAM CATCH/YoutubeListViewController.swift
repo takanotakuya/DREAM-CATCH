@@ -17,7 +17,7 @@ class YoutubeListViewController: UIViewController {
     private let cellId = "cellId"
     private let attentionCellId = "atentionCellId"
     private var videoItems = [Item]()
-    private var selectedItem: Item?
+    var selectedItem: Item?
     
     // MARK: IBOutlets
     @IBOutlet weak var videoListCollectionView: UICollectionView!
@@ -28,6 +28,7 @@ class YoutubeListViewController: UIViewController {
     
     @IBOutlet weak var bottomVideoImageView: UIImageView!
     @IBOutlet weak var bottomVideoView: UIView!
+    @IBOutlet weak var searchButton: UIButton!
     
     // bottomImageViewの制約
     @IBOutlet weak var bottomVideoViewLeading: NSLayoutConstraint!
@@ -48,7 +49,7 @@ class YoutubeListViewController: UIViewController {
         setupViews()
         fetchYoutubeSerachInfo()
         setupGestureRecognizer()
-        NotificationCenter.default.addObserver(self, selector: #selector(showThumbnailImage), name: .init("thumbnailImage"), object: nil)
+        setupNotifications()
     }
     
     // MARK: Methods
@@ -68,6 +69,20 @@ class YoutubeListViewController: UIViewController {
         bottomVideoDescribeLabel.text = self.selectedItem?.snippet.description
     }
     
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showThumbnailImage), name: .init("thumbnailImage"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showSearchedItem), name: .init("searchedItem"), object: nil)
+    }
+    
+    @objc private func showSearchedItem() {
+        let youtubeViewController = UIStoryboard(name: "Youtube", bundle: nil).instantiateViewController(identifier: "YoutubeViewController") as YoutubeViewController
+        
+        youtubeViewController.selectedItem = self.selectedItem
+        
+        bottomVideoView.isHidden = true
+        self.present(youtubeViewController, animated: true, completion: nil)
+    }
+    
     private func setupViews() {
         videoListCollectionView.delegate = self
         videoListCollectionView.dataSource = self
@@ -81,7 +96,14 @@ class YoutubeListViewController: UIViewController {
         bottomVideoView.isHidden = true
         
         bottomCloseButton.addTarget(self, action: #selector(tappedBottomCloseButton), for: .touchUpInside)
-//        searchButton.addTarget(self, action: #selector(tappedSearchButton), for: .touchUpInside)
+        searchButton.addTarget(self, action: #selector(tappedSearchButton), for: .touchUpInside)
+    }
+    
+    @objc private func tappedSearchButton() {
+        let searchController = SearchViewController()
+        let nav = UINavigationController(rootViewController: searchController)
+        self.present(nav, animated: true, completion: nil)
+        
     }
     
     @objc private func tappedBottomCloseButton() {
