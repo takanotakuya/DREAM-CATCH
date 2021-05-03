@@ -33,6 +33,7 @@
 		B0AA19B3263A9A3E0064E637 /* AttentionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0AA19B2263A9A3E0064E637 /* AttentionCollectionViewCell.xib */; };
 		B0AA19C8263AA8440064E637 /* YoutubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AA19C7263AA8440064E637 /* YoutubeViewController.swift */; };
 		B0AA19D8263AA9420064E637 /* Youtube.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AA19D7263AA9420064E637 /* Youtube.storyboard */; };
+		B0BB3E5C263FD0BB008E9912 /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BB3E5B263FD0BB008E9912 /* JokeViewController.swift */; };
 		B0F7F7B6263C1A3D00F33063 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7F7B5263C1A3C00F33063 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		B0AA19B2263A9A3E0064E637 /* AttentionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttentionCollectionViewCell.xib; sourceTree = "<group>"; };
 		B0AA19C7263AA8440064E637 /* YoutubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeViewController.swift; sourceTree = "<group>"; };
 		B0AA19D7263AA9420064E637 /* Youtube.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Youtube.storyboard; sourceTree = "<group>"; };
+		B0BB3E5B263FD0BB008E9912 /* JokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
 		B0F7F7B5263C1A3C00F33063 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E1D3311B45509379D8378199 /* Pods-DREAM CATCHTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DREAM CATCHTests.release.xcconfig"; path = "Target Support Files/Pods-DREAM CATCHTests/Pods-DREAM CATCHTests.release.xcconfig"; sourceTree = "<group>"; };
 		F50853301C02A5B639E3CBA8 /* Pods_DREAM_CATCH_DREAM_CATCHUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DREAM_CATCH_DREAM_CATCHUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +174,7 @@
 				B0AA19C7263AA8440064E637 /* YoutubeViewController.swift */,
 				B0F7F7B5263C1A3C00F33063 /* SearchViewController.swift */,
 				B050E744263D25650056B661 /* QuotationsViewController.swift */,
+				B0BB3E5B263FD0BB008E9912 /* JokeViewController.swift */,
 				B0827BA22636593C00F02744 /* LaunchScreen.storyboard */,
 				B0827B9D2636593800F02744 /* Main.storyboard */,
 				B0AA19D7263AA9420064E637 /* Youtube.storyboard */,
@@ -505,6 +508,7 @@
 				B0827B982636593800F02744 /* AppDelegate.swift in Sources */,
 				B0827B9A2636593800F02744 /* SceneDelegate.swift in Sources */,
 				B050E745263D25650056B661 /* QuotationsViewController.swift in Sources */,
+				B0BB3E5C263FD0BB008E9912 /* JokeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
