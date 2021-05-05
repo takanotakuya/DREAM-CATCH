@@ -47,7 +47,7 @@ class YoutubeListViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
-//        fetchYoutubeSerachInfo()
+        fetchYoutubeSerachInfo()
         setupGestureRecognizer()
         setupNotifications()
     }
