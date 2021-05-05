@@ -103,7 +103,7 @@ YouTubeのAPIを導入したのも、若者が一番馴染みがあり利用し�
 <br>
 
 ### アプリについて画面
-<img src="77cbee6dffe36edb342a1639dc3a0f6d](https://user-images.githubusercontent.com/78135903/117154603-fc37af80-adf6-11eb-9ec4-85ee6f75ee65.gif">
+<img src="https://user-images.githubusercontent.com/78135903/117154603-fc37af80-adf6-11eb-9ec4-85ee6f75ee65.gif">
 <br>
 <br>
 
