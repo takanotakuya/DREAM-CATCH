@@ -98,7 +98,7 @@ YouTubeのAPIを導入したのも、若者が一番馴染みがあり利用し�
 # DEMO
 
 ### トップ画面
-<img src="">
+<img src="https://user-images.githubusercontent.com/78135903/117155922-2a69bf00-adf8-11eb-9d48-cb74829aa268.gif" width="25%">
 <br>
 <br>
 
@@ -108,19 +108,19 @@ YouTubeのAPIを導入したのも、若者が一番馴染みがあり利用し�
 <br>
 
 ### YouTubeAPI画面
-<img src="">
+<img src="" width="25%">
 <br>
 <br>
 
 ### 名言API画面
-<img src="">
+<img src="" width="25%">
 <br>
 <br>
 
 ### 各「夢・やりたいこと・なりたい自分」一覧画面
-<img src="">
-<img src="">
-<img src="">
+<img src="" width="25%">
+<img src="" width="25%">
+<img src="" width="25%">
 <br>
 <br>
 
