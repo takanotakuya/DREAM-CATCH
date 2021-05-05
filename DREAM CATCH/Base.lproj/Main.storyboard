@@ -222,7 +222,7 @@
                                     <constraint firstAttribute="width" constant="125" id="qV9-rv-Ufu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="今日の一言API">
+                                <state key="normal" title="元気がでるAPI">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -380,10 +380,10 @@
             </objects>
             <point key="canvasLocation" x="1003" y="872"/>
         </scene>
-        <!--Joke View Controller-->
+        <!--Jokes View Controller-->
         <scene sceneID="jR3-t9-Irx">
             <objects>
-                <viewController id="2Xg-8V-O65" customClass="JokeViewController" customModule="DREAM_CATCH" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Xg-8V-O65" customClass="JokesViewController" customModule="DREAM_CATCH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zIV-ST-u6K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
