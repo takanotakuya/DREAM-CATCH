@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/78135903/117132418-cafeb580-addd-11eb-914d-81850684e6d8.png" width="100%">
+<img src="https://user-images.githubusercontent.com/78135903/117132418-cafeb580-addd-11eb-914d-81850684e6d8.png" width="30%">
 <br>
 <br>
 <!-- START doctoc -->
