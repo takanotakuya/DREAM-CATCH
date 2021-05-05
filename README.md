@@ -108,20 +108,17 @@ YouTubeのAPIを導入したのも、若者が一番馴染みがあり利用し�
 <br>
 
 ### YouTubeAPI画面
-<img src="https://user-images.githubusercontent.com/78135903/117157921-f68f9900-adf9-11eb-9493-2582974d9052.gif" width="25%">
-<img src="https://user-images.githubusercontent.com/78135903/117158363-4e2e0480-adfa-11eb-88b2-fc27990730db.gif" width="25%">
+<img src="https://user-images.githubusercontent.com/78135903/117157921-f68f9900-adf9-11eb-9493-2582974d9052.gif" width="25%"> <img src="https://user-images.githubusercontent.com/78135903/117158363-4e2e0480-adfa-11eb-88b2-fc27990730db.gif" width="25%">
 <br>
 <br>
 
 ### 名言API画面
-<img src="" width="25%">
+<img src="https://user-images.githubusercontent.com/78135903/117159469-402cb380-adfb-11eb-92db-b0436b6c7be0.gif" width="25%">
 <br>
 <br>
 
 ### 各「夢・やりたいこと・なりたい自分」一覧画面
-<img src="" width="25%">
-<img src="" width="25%">
-<img src="" width="25%">
+<img src="https://user-images.githubusercontent.com/78135903/117160118-cfd26200-adfb-11eb-8da5-6b1fa29d1ccb.gif" width="25%"> <img src="https://user-images.githubusercontent.com/78135903/117161232-b5e54f00-adfc-11eb-83fd-09e16c802fe8.gif" width="25%"> <img src="https://user-images.githubusercontent.com/78135903/117162342-a4507700-adfd-11eb-9731-5c8fc4e70afd.gif" width="25%">
 <br>
 <br>
 
@@ -186,6 +183,7 @@ XCode
 - 元気が出るAPIではAPI情報の取得までは実装してあるが、アプリ画面に表示する点ではまだ未実装になっている。<br>
 そのためアプリ画面に表示する実装を行う。<br>
 ※現在はファイル内で一部コメントアウトしてある<br>
+- 名言API画面では、全て英語表記となっているため日本語対応にする。
 - 開発ではiPhone 11を使用して行なった。そのため他の端末ではビュー崩れがおきるため、画面の修正<br>
 加えてトップページではスクロールに対応できていないため、スクロールに対応させる。<br>
 
