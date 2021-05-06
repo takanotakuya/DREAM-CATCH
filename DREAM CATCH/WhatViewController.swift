@@ -45,6 +45,7 @@ class WhatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = table2View.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath)
         let todoTitle = todoList[indexPath.row]
         cell.textLabel?.text = todoTitle
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
     

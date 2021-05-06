@@ -45,6 +45,7 @@ class WantViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = table3View.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath)
         let todoTitle = todoList[indexPath.row]
         cell.textLabel?.text = todoTitle
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
     
