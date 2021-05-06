@@ -20,7 +20,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What Do" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BV6-va-ahW">
                                 <rect key="frame" x="20" y="318" width="87" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="87" id="kCh-mS-ac1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="87" id="kCh-mS-ac1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,7 +64,7 @@
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Sna-ZP-KKU"/>
-                                    <constraint firstAttribute="width" constant="47" id="oce-5E-gxq"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="47" id="oce-5E-gxq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="登録">
@@ -79,7 +79,7 @@
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="wcw-7h-BqH"/>
-                                    <constraint firstAttribute="width" constant="47" id="yPy-2w-DhO"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="47" id="yPy-2w-DhO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="登録">
@@ -93,7 +93,7 @@
                                 <rect key="frame" x="20" y="198" width="360" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="N5d-li-TWm"/>
-                                    <constraint firstAttribute="width" constant="360" id="X4Y-Xm-9iT"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="360" id="X4Y-Xm-9iT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,7 +103,7 @@
                                 <rect key="frame" x="20" y="404" width="360" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="UM1-Ms-2No"/>
-                                    <constraint firstAttribute="width" constant="360" id="WhV-SV-j8W"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="360" id="WhV-SV-j8W"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -124,7 +124,7 @@
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6af-cj-hEs"/>
-                                    <constraint firstAttribute="width" constant="47" id="Zgg-SU-s6e"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="47" id="Zgg-SU-s6e"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="登録">
@@ -138,7 +138,7 @@
                                 <rect key="frame" x="322" y="148" width="47" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="47" id="9P7-YC-zMr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="47" id="9P7-YC-zMr"/>
                                     <constraint firstAttribute="height" constant="30" id="Oej-1B-e23"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
@@ -153,7 +153,7 @@
                                 <rect key="frame" x="322" y="354" width="47" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="47" id="GGA-24-WCA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="47" id="GGA-24-WCA"/>
                                     <constraint firstAttribute="height" constant="30" id="JeU-CN-Dr6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
@@ -168,7 +168,7 @@
                                 <rect key="frame" x="322" y="560" width="47" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="47" id="HZ3-iB-AIz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="47" id="HZ3-iB-AIz"/>
                                     <constraint firstAttribute="height" constant="30" id="HiZ-a5-wjb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
@@ -739,7 +739,7 @@
                                 <rect key="frame" x="101" y="361" width="213" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="KZh-xx-KeX"/>
-                                    <constraint firstAttribute="width" constant="213" id="TPN-1L-fik"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="213" id="TPN-1L-fik"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
